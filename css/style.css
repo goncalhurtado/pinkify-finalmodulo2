@@ -3,6 +3,10 @@
     height: 160px;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 
 /* .play-playlist {
     margin-top: 70px;
