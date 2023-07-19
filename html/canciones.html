@@ -22,12 +22,15 @@
           </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
-
+                        <!-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./html/canciones.html">Canciones</a>
+                            <a class="nav-link active" aria-current="page" href="./canciones.html">Canciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Descubrir (beta)</a>
@@ -58,7 +61,7 @@
 
                                                 <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
                                                 <p><a class="link-offset-1" href="#">¿Se te ha olvidado la contraseña?</a></p>
-                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="./html/registro.html">Suscríbete a pinkify</a></p>
+                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="./registro.html">Suscríbete a pinkify</a></p>
                                             </div>
                                         </form>
                                     </div>
@@ -70,110 +73,128 @@
                             </div>
                         </div>
                         <!--  -->
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container">
-            <h2>Esto es pinkify</h2>
-            <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ratione sit, perspiciatis fugit ducimus quia. Lorem ipsum, dolor sit amet
-            </p>
+        <div class="container text-center">
+            <h3>Canciones</h3>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Cancion</th>
+                        <th scope="col">Artista</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Estado de animo</th>
+                        <th scope="col">Agregar a favoritos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Volveras a mi cama</th>
+                        <td>Fabian Show</td>
+                        <td>1999</td>
+                        <td>Enérgico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-solid fa-heart" style="text-decoration: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Persiana Americana </th>
+                        <td>Soda Stereo</td>
+                        <td>1986</td>
+                        <td>Enérgico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Crimen</th>
+                        <td>Gustavo Cerati</td>
+                        <td>2006</td>
+                        <td>Melancólico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cuando Pase el Temblor</th>
+                        <td>Soda Stereo</td>
+                        <td>1985</td>
+                        <td>Alegre</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">De Música Ligera</th>
+                        <td>Soda Stereo</td>
+                        <td>1990</td>
+                        <td>Eufórico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> Sweet Child O' Mine</th>
+                        <td>Guns N' Roses</td>
+                        <td>1987</td>
+                        <td>Enérgico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hotel California</th>
+                        <td>Eagles</td>
+                        <td>1976</td>
+                        <td>Melancólico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Back in Black</th>
+                        <td>AC/DC</td>
+                        <td>1980</td>
+                        <td>Eufórico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Stairway to Heaven</th>
+                        <td>Led Zeppelin</td>
+                        <td>1971</td>
+                        <td>Melancólico</td>
+                        <td>
+                            <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </table>
         </div>
-        <h5 class="text-center">Artistas mas escuchados</h5>
-        <div class="container">
-            <div class="row text-center">
-                <div class="container col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 1</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 2</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 3</p>
-                    </div>
-                </div>
 
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 4</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 5</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/artista.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">artista 6</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h5 class="text-center">top playlist</h5>
-        <div class="container">
-            <div class="row text-center">
-                <div class="container-sm col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 1</p>
-                    </div>
-                </div>
-                <div class="container-sm col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 2</p>
-                    </div>
-                </div>
-                <div class="container-sm col-xxl-2 col-xl-2 col-lg-4 col-sm-12">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 3</p>
-                    </div>
-                </div>
+        <!-- <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr> -->
 
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 4</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 5</p>
-                    </div>
-                </div>
-                <div class="container col-xxl-2 col-xl-2 d-none d-xl-block">
-                    <img src="./assets/img/playlist.jpg" class="img-fluid rounded-3" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">playlist 6</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container text-center mt-3 mb-3">
-            <h2>Caracteristicas de nuestro servicio</h2>
-            <div class="text-justify">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nemo velit veniam quis provident officia eius quo est libero culpa?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt deleniti aperiam repudiandae sapiente quod. Officia blanditiis harum sunt amet, voluptates fugiat possimus doloribus quia ex, cupiditate sequi aut sed minima.</p>
-            </div>
-        </div>
 
     </main>
     <footer class="bg-light text-dark pt-5 pb-4">
