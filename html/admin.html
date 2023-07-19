@@ -15,62 +15,22 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <a class="navbar-brand" href="#">pinkify</a>
+                <a class="navbar-brand" href="#">pinkify admin</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
-
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="./admin.html">ADMIN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./canciones.html">Canciones</a>
+                            <a class="nav-link active" aria-current="page" href="./canciones-admin.html">Editar canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Descubrir (beta)</a>
+                            <a class="nav-link active" aria-current="page" href="../index.html">Salir</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link active btn text-start" aria-current="page" href="#" id="iniciar-sesion" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
-                        </li> -->
-                        <!-- MODAL DE INICIAR SESION -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesion</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Mail</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                <div id="emailHelp" class="form-text"></div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1">
-                                            </div>
-                                            <div class="text-center">
-
-                                                <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
-                                                <p><a class="link-offset-1" href="#">¿Se te ha olvidado la contraseña?</a></p>
-                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="#">Suscríbete a pinkify</a></p>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-
                     </ul>
                 </div>
             </div>
@@ -78,53 +38,27 @@
     </header>
     <main>
         <div class="container">
-
-            <form class="well form-horizontal" action=" " method="post" id="contact_form">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
                 <div class="text-center">
-                    <h2>Registrate</h2>
-                </div><br>
-                <!-- nombre -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Nombre</label>
-                    <input name="first_name" placeholder="First Name" class="form-control" type="text">
-                </div>
-                <!-- apellido -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Apellido</label>
-                    <input name="last_name" placeholder="Last Name" class="form-control" type="text">
-                </div>
-                <!-- fecha de nacimiento -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Fecha de nacimiento</label>
-                    <input name="user_name" placeholder="fecha de nacimiento" class="form-control" type="date">
-                </div>
-                <!-- mail -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Mail</label>
-                    <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
-                </div>
-                <!-- contraseña -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Contraseña</label>
-                    <input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
-                </div>
-                <!-- submit -->
-                <div class="text-center">
-                    <div class="btn btn-outline-primary ">Registrarse</div>
+                    <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
+                    <p>Si no recuerda sus datos admin<a class="link-offset-1 ms-1" href="#">Escribale a soporte</a></p>
                 </div>
             </form>
         </div>
-
-
     </main>
-
-
-
-    <!-- FOOTER -->
     <footer class="bg-light text-dark pt-5 pb-4">
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <!-- <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-primary">Nosotros</h5>
                     <hr class="mb-4">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nemo quia nihil.</p>
@@ -176,7 +110,7 @@
                     <p>
                         <li class="fas fa-print me-3"></li> +555
                     </p>
-                </div>
+                </div> -->
                 <hr class="mb-4">
                 <div class="text-center mb-2">
                     <p>Copyright
@@ -186,7 +120,7 @@
                 <div class="text-center">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <p><a class="link-offset-1" href="./admin.html">Iniciar sesion como Admin</a></p>
+                            <p><a class="link-offset-1" href="#">Iniciar sesion como Admin</a></p>
                         </li>
                         <li class="list-inline-item">
                             <a href="" class="fab fa-youtube"></a>
