@@ -43,7 +43,7 @@ formSignUp.addEventListener("submit", (e) => {
         error.style.display = "block"
         setTimeout(() => {
             error.style.display = "none"
-        }, 4000)
+        }, 2000)
         return;
     }
     //Validar mail con expresión regular
