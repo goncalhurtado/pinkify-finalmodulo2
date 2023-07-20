@@ -54,6 +54,8 @@ if (usuarioLogueado === null) {
     usuarioNavbar.classList.add("d-none")
 } else {
     console.log(`esta logueado el usuario ${usuarioLogueado.nombre}`);
+    let nombreNavbar = document.getElementById("nombre-logueado");
+    nombreNavbar.innerHTML = `${usuarioLogueado.nombre}`
     iniciarSesion.classList.add("d-none")
 }
 
