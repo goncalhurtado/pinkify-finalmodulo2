@@ -32,9 +32,19 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Descubrir (beta)</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active btn text-start" aria-current="page" href="#" id="iniciar-sesion" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
+                        <li id="usuario-navbar" class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item disabled" href="#">mi cuenta</a></li>
+                                <li><a class="dropdown-item disabled" href="#">mis favoritos</a></li>
+                                <li><a id="log-out" class="dropdown-item" href="#">Salir</a></li>
+                            </ul>
                         </li>
+                        <li id="iniciar-sesion" class="nav-item">
+                            <a class="nav-link active btn text-start" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
+                        </li>
+
                         <!-- MODAL DE INICIAR SESION -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">

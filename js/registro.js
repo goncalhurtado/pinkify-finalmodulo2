@@ -3,8 +3,6 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const formSignUp = document.querySelector("#registro")
 
-
-
 class Usuario {
     constructor(id, nombre, apellido, email, password, isLogged = false) {
         this.id = id;

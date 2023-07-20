@@ -3,8 +3,6 @@
 const usuariosString = localStorage.getItem('usuarios');
 const usuariosRecuperados = JSON.parse(usuariosString);
 
-// Ahora, usuariosRecuperados contendrá el array de objetos original
-console.log(usuariosRecuperados);
 
 const formLogin = document.querySelector("#login")
 
@@ -37,5 +35,39 @@ formLogin.addEventListener("submit", (e) => {
     localStorage.setItem("usuarioLogueado", JSON.stringify(validarEmail))
     formLogin.reset();
     alert("usuario logueado con exito")
-        // si existe el usuario y lo encuentra
+    window.location.reload();
+    // si existe el usuario y lo encuentra
+})
+
+
+//LOG OUT
+
+const usuarioLogueadoString = localStorage.getItem(`usuarioLogueado`)
+const usuarioLogueado = JSON.parse(usuarioLogueadoString);
+let usuarioNavbar = document.getElementById("usuario-navbar");
+let iniciarSesion = document.getElementById("iniciar-sesion")
+
+//ver si esta logueado
+
+if (usuarioLogueado === null) {
+    console.log(`no hay usuario logueado`);
+    usuarioNavbar.classList.add("d-none")
+} else {
+    console.log(`esta logueado el usuario ${usuarioLogueado.nombre}`);
+    iniciarSesion.classList.add("d-none")
+}
+
+// boton salir
+let logOut = document.getElementById("log-out");
+let nombreNavbar = document.getElementById("nombre-navbar")
+
+logOut.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem('usuarioLogueado');
+    iniciarSesion.classList.remove("d-none")
+    usuarioNavbar.classList.remove("d-none")
+    usuarioNavbar.classList.add("d-none")
+
+    // Para recargar la página
+    window.location.reload();
 })
