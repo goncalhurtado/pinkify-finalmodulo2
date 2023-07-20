@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 <a class="navbar-brand" href="#">pinkify</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,19 +44,19 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form id="login">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Mail</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                <div id="emailHelp" class="form-text"></div>
+                                                <input id="email-login" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                                <label id="password-login" for="exampleInputPassword1" class="form-label">Contraseña</label>
                                                 <input type="password" class="form-control" id="exampleInputPassword1">
                                             </div>
                                             <div class="text-center">
-
-                                                <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
+                                                <p id="error-login"></p>
+                                                <button id="" type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
                                                 <p><a class="link-offset-1" href="#">¿Se te ha olvidado la contraseña?</a></p>
                                                 <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="./html/registro.html">Suscríbete a pinkify</a></p>
                                             </div>
