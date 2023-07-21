@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <a class="navbar-brand" href="#">pinkify admin</a>
+                <a class="navbar-brand" href="./admin.html">pinkify admin</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,15 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./admin.html">ADMIN</a>
+                            <a class="nav-link active" aria-current="page" href="">ADMIN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./canciones-admin.html">Editar canciones</a>
+                            <a id="editar-canciones" class="nav-link active" aria-current="page" href="./canciones-admin.html">Editar canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Salir</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="volver-a-index" class="nav-link active" aria-current="page" href="">Volver al inicio</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +39,7 @@
         </nav>
     </header>
     <main>
-        <div class="container">
+        <div id="contenedor-login-admin" class="container">
             <form id="login" class="">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mail</label>
@@ -56,63 +58,18 @@
                 </div>
             </form>
         </div>
+        <div id="contenedor-admin-logueado" class="container">
+            <h3>Bienvenido al ADMIN de pinkify</h3>
+            <h5>usuario:
+                <a id="nombre-admin" class="text-decoration-none text-black"></a>
+            </h5><br>
+            <p>Desde aqui puedes controlar que canciones se muestran y cuales no</p>
+            <a id="log-out" class="btn btn-outline-danger" aria-current="page" href="">Cerrar Sesion</a>
+        </div>
     </main>
     <footer class="bg-light text-dark pt-5 pb-4">
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
-                <!-- <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Nosotros</h5>
-                    <hr class="mb-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nemo quia nihil.</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Dejanos ayuda</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="">cuenta</a>
-                    </p>
-                    <p>
-                        <a href="">cuenta</a>
-                    </p>
-                    <p>
-                        <a href="">cuenta</a>
-                    </p>
-                    <p>
-                        <a href="">cuenta</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">dinero</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Contacto</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <li class="fas fa-home me-3"></li> Mexico, ciudad 255
-                    </p>
-                    <p>
-                        <li class="fas fa-envelope me-3"></li> mailo@ejemplo
-                    </p>
-                    <p>
-                        <li class="fas fa-home me-3"></li> +123456
-                    </p>
-                    <p>
-                        <li class="fas fa-print me-3"></li> +555
-                    </p>
-                </div> -->
                 <hr class="mb-4">
                 <div class="text-center mb-2">
                     <p>Copyright
@@ -122,7 +79,7 @@
                 <div class="text-center">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <p><a class="link-offset-1" href="#">Iniciar sesion como Admin</a></p>
+                            <!-- <p><a class="link-offset-1" href="#">Iniciar sesion como Admin</a></p> -->
                         </li>
                         <li class="list-inline-item">
                             <a href="" class="fab fa-youtube"></a>
