@@ -40,3 +40,6 @@ function mostrarCanciones() {
     });
 }
 mostrarCanciones();
+
+
+// BUSCADOR
