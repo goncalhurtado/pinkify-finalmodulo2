@@ -74,10 +74,8 @@ formAgregarCancion.addEventListener("submit", (e) => {
     formAgregarCancion.reset()
     console.log(canciones.length);
     alert(`cancion agregada correctamente`);
+    window.location.reload();
 })
-
-// constructor(id, nombre, artista, mood, link, estaOculta = false)
-
 
 
 mostrarCancionesAdmin()
