@@ -3,6 +3,7 @@
 let tablaCanciones = document.getElementById("tabla-canciones")
 let reproductorInfo = document.getElementById("informacion-reproductor");
 
+
 function mostrarCanciones() {
     const cancionesString = localStorage.getItem('canciones');
     const cancionRecuperadas = JSON.parse(cancionesString);
@@ -39,7 +40,49 @@ function mostrarCanciones() {
         });
     });
 }
-mostrarCanciones();
 
+mostrarCanciones()
 
-// BUSCADOR
+// FUNCIONALIDAD BUSCADOR
+
+let textoBuscador = document.getElementById(`texto-buscador`)
+let botonBuscador = document.getElementById(`botonBuscador`);
+let errorBuscador = document.getElementById(`error-buscador`)
+let tablaCancionesFiltrada = document.getElementById(`tabla-canciones-filtrada`);
+
+botonBuscador.addEventListener("click", (e) => {
+    e.preventDefault();
+    const texto = textoBuscador.value;
+    if (texto === ``) {
+        errorBuscador.innerHTML = `Debe escribir algo`
+        errorBuscador.style.display = "block"
+        setTimeout(() => {
+            errorBuscador.style.display = "none"
+        }, 4000)
+        return
+    }
+    data = JSON.parse(localStorage.getItem(`canciones`))
+    let cancionesFiltradas = data.filter((cancion) => {
+        return cancion.artista.includes(texto);
+    })
+
+    for (let i = 0; i < cancionesFiltradas.length; i++) {
+        let cancion = cancionesFiltradas[i];
+
+        tablaCanciones.innerHTML +=
+            `
+        <tr>
+            <td>
+                <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play" style="text-decoration: none;">
+            </td>
+            <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
+            <td id="artista-cancion">${cancion.artista}</td>
+            <td>
+                 <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
+            </td>
+        </tr>
+        `
+    }
+
+    console.log(`hay ${cancionesFiltradas.length} canciones filtradas`);
+})
