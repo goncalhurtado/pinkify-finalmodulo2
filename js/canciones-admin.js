@@ -35,31 +35,23 @@ function mostrarCancionesAdmin() {
         </tr>
         `
 
-        //     }
-
-
-        // const botonOcultar = document.getElementById(`botonOcultar-${cancion.id}`);
-        // botonOcultar.addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     ocultarCancion(cancion.id);
-        //     mostrarCancionesAdmin(); // Para refrescar la lista de canciones mostradas
-        // });
-
-
-        // cancionRecuperadas.forEach(cancion => {
-        //     const botonPlay = document.getElementById(`botonPlay-${cancion.id}`);
-        //     botonPlay.addEventListener('click', (e) => {
-        //         e.preventDefault();
-        //         const audioPlayer = document.getElementById('audioPlayer');
-        //         const songUrl = cancion.link;
-        //         audioPlayer.src = songUrl;
-        //         audioPlayer.play();
-        //         reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
-
-        //     });
-        // });
-
     }
+
+    cancionRecuperadas.forEach(cancion => {
+        const botonOcultar = document.getElementById(`botonOcultar-${cancion.id}`);
+        botonOcultar.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (cancion.estaOculta === false) {
+                ocultarCancion(cancion.id)
+                console.log(`se ocultó la cancion ${cancion.nombre}`);
+            } else {
+                mostrarCancion(cancion.id)
+                console.log(`se mostrò la cancion ${cancion.nombre}`);
+            }
+        });
+    });
+
+
 }
 
 function ocultarCancion(id) {
@@ -72,8 +64,21 @@ function ocultarCancion(id) {
         }
     }
     localStorage.setItem('canciones', JSON.stringify(cancionRecuperadas));
+    window.location.reload();
 }
 
+function mostrarCancion(id) {
+    const cancionesString = localStorage.getItem('canciones');
+    const cancionRecuperadas = JSON.parse(cancionesString);
+    for (let i = 0; i < cancionRecuperadas.length; i++) {
+        if (cancionRecuperadas[i].id === id) {
+            cancionRecuperadas[i].estaOculta = false;
+            break;
+        }
+    }
+    localStorage.setItem('canciones', JSON.stringify(cancionRecuperadas));
+    window.location.reload();
+}
 
 
 
