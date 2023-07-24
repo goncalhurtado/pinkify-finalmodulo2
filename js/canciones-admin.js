@@ -25,9 +25,9 @@ function mostrarCancionesAdmin() {
             <td id="artista-cancion">${cancion.artista}</td>
             <td id="estado-cancion">${cancion.estaOculta?"Oculto":"Visible"}</td>
             <td>
-                <a id="botonEditar-${cancion.id}" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
-                <a id="botonOcultar-${cancion.id}" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2" style="text-decoration: none;" >
-                <a href="" class="fa-solid fa-trash text-danger" style="text-decoration: none">
+                <a id="botonEditar-${cancion.id}" href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
+                <a id="botonOcultar-${cancion.id}" href="" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2" style="text-decoration: none;" >
+                <a id="botonEliminar-${cancion.id}" href="" class="fa-solid fa-trash text-danger" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#eliminar-cancion">
             </td>
         </tr>
         `
@@ -50,6 +50,34 @@ function mostrarCancionesAdmin() {
             let link = document.getElementById(`link-editar`)
             link.value = `${cancion.link}`
 
+            formEditarCancion.addEventListener("submit", (e) => {
+                e.preventDefault()
+                let nombre = document.getElementById(`nombre-editar`).value
+                let artista = document.getElementById(`artista-editar`).value
+                let mood = document.getElementById(`mood-editar`).value
+                let link = document.getElementById(`link-editar`).value
+
+                let canciones = JSON.parse(localStorage.getItem("canciones"));
+
+                //encontrar el index trayendolo del boton
+                let index = -1;
+                for (i = 0; i < canciones.length; i++) {
+                    if (canciones[i].id == cancion.id) {
+                        index = i
+                        break
+                    }
+                }
+
+                canciones[index].nombre = nombre;
+                canciones[index].artista = artista;
+                canciones[index].mood = mood;
+                canciones[index].link = link;
+
+                localStorage.setItem("canciones", JSON.stringify(canciones))
+                formEditarCancion.reset()
+                alert(`cancion editada correctamente`);
+                window.location.reload();
+            })
         });
     });
 
@@ -69,43 +97,53 @@ function mostrarCancionesAdmin() {
         });
     });
 
+    //boton eliminar
+
+    cancionRecuperadas.forEach(cancion => {
+        const botonEliminar = document.getElementById(`botonEliminar-${cancion.id}`);
+        botonEliminar.addEventListener('click', (e) => {
+            e.preventDefault();
+            let textoModal = document.getElementById(`texto-modal-eliminar`)
+            textoModal.innerHTML = `¿Estas seguro que quieres eliminar ${cancion.nombre}?`
+
+            let confirmacionEliminar = document.getElementById(`confirmacion-eliminar`);
+            confirmacionEliminar.addEventListener("click", (e) => {
+                e.preventDefault();
+
+
+                let canciones = JSON.parse(localStorage.getItem("canciones"));
+
+                //encontrar el index trayendolo del boton
+                let index = -1;
+                for (i = 0; i < canciones.length; i++) {
+                    if (canciones[i].id == cancion.id) {
+                        index = i
+                        break
+                    }
+                }
+
+                let botonConf = document.getElementById(`boton-conf`)
+                botonConf.classList.add(`d-none`)
+                let animacionEliminar = document.getElementById(`animacion-eliminar`)
+                animacionEliminar.classList.remove(`d-none`)
+                let textoEliminar = document.getElementById(`texto-eliminar`)
+                textoEliminar.classList.remove("d-none")
+                textoEliminar.innerHTML = `Eliminando "${cancion.nombre}"...`
+
+                setTimeout(() => {
+                    canciones.splice(index, 1);
+                    localStorage.setItem("canciones", JSON.stringify(canciones))
+                    window.location.reload();
+                }, 1000)
+
+                return
+            })
+
+        });
+    });
+
 
 }
-
-
-//EDITAR CANCION
-
-formEditarCancion.addEventListener("submit", (e) => {
-    e.preventDefault()
-    let id = document.getElementById(`id-editar`).value
-    let nombre = document.getElementById(`nombre-editar`).value
-    let artista = document.getElementById(`artista-editar`).value
-    let mood = document.getElementById(`mood-editar`).value
-    let link = document.getElementById(`link-editar`).value
-
-    let canciones = JSON.parse(localStorage.getItem("canciones"));
-
-    //encontrar el index trayendolo del boton
-    let index = -1;
-    for (i = 0; i < canciones.length; i++) {
-        if (canciones[i].id == id) {
-            console.log(`lo encontro`);
-            index = i
-            break
-        }
-    }
-
-    canciones[index].nombre = nombre;
-    canciones[index].artista = artista;
-    canciones[index].mood = mood;
-    canciones[index].link = link;
-
-    alert(`cancion editada correctamente`);
-
-    localStorage.setItem("canciones", JSON.stringify(canciones))
-    formEditarCancion.reset()
-    window.location.reload();
-})
 
 
 //OCULTAR, MOSTRAR CANCION
@@ -160,7 +198,7 @@ formAgregarCancion.addEventListener("submit", (e) => {
     window.location.reload();
 })
 
-// EDITAR CANCION
+// ELIMINAR CANCION
 
 
 

@@ -204,26 +204,29 @@
             </div>
         </div>
         <!-- MODAL OCULTAR CANCION -->
-        <!-- <div class="modal fade" id="ocultar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="eliminar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estas seguro que quieres ocultar la cancion?</h1>
+                        <h1 class="modal-title fs-5" id="texto-modal-eliminar"></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-outline-danger mb-3">Ocultar Cancion</button>
+                        <div id="confirmacion-eliminar" class="text-center">
+                            <div id="animacion-eliminar" class="d-none spinner-border text-danger" role="status">
+                            </div>
+                            <p class="d-none text-danger" id="texto-eliminar">Eliminando...</p>
+                            <button id="boton-conf" type="submit" class="btn btn-outline-danger mb-3">Eliminar Cancion</button>
                         </div>
                         </form>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </main>
     <footer class="bg-light text-dark pt-5 pb-4">
         <div class="container text-center text-md-start">
