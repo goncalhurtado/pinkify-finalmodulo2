@@ -20,36 +20,61 @@ function mostrarCancionesAdmin() {
     tablaCanciones.innerHTML = "";
     for (let i = 0; i < cancionRecuperadas.length; i++) {
         let cancion = cancionRecuperadas[i];
-        if (cancion.estaOculta === false) {
-            tablaCanciones.innerHTML +=
-                `
-        <tr>
 
+        tablaCanciones.innerHTML +=
+            `
+        <tr class=" ${cancion.estaOculta?"table-secondary":""}">
             <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
             <td id="artista-cancion">${cancion.artista}</td>
+            <td id="estado-cancion">${cancion.estaOculta?"Oculto":"Visible"}</td>
             <td>
-            <a href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
-            <a id="botonOcultar-${cancion.id}" href="" class="fa-solid fa-eye-slash me-2" style="text-decoration: none;" >
-                <a href="" class="fa-solid fa-trash" style="text-decoration: none">
+                <a href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
+                <a id="botonOcultar-${cancion.id}" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2" style="text-decoration: none;" >
+                <a href="" class="fa-solid fa-trash text-danger" style="text-decoration: none">
             </td>
         </tr>
         `
-        } else {
-            tablaCanciones.innerHTML +=
-                `
-    <tr class="table-secondary cancion-oculta">
-        <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
-        <td id="artista-cancion">${cancion.artista}</td>
-        <td>
-        <a href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
-        <a id="botonOcultar-${cancion.id}" href="" class="fa-solid fa-eye me-2" style="text-decoration: none;" >
-            <a href="" class="fa-solid fa-trash" style="text-decoration: none">
-        </td>
-    </tr>
-    `
-        }
+
+        //     }
+
+
+        // const botonOcultar = document.getElementById(`botonOcultar-${cancion.id}`);
+        // botonOcultar.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     ocultarCancion(cancion.id);
+        //     mostrarCancionesAdmin(); // Para refrescar la lista de canciones mostradas
+        // });
+
+
+        // cancionRecuperadas.forEach(cancion => {
+        //     const botonPlay = document.getElementById(`botonPlay-${cancion.id}`);
+        //     botonPlay.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const audioPlayer = document.getElementById('audioPlayer');
+        //         const songUrl = cancion.link;
+        //         audioPlayer.src = songUrl;
+        //         audioPlayer.play();
+        //         reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
+
+        //     });
+        // });
+
     }
 }
+
+function ocultarCancion(id) {
+    const cancionesString = localStorage.getItem('canciones');
+    const cancionRecuperadas = JSON.parse(cancionesString);
+    for (let i = 0; i < cancionRecuperadas.length; i++) {
+        if (cancionRecuperadas[i].id === id) {
+            cancionRecuperadas[i].estaOculta = true;
+            break;
+        }
+    }
+    localStorage.setItem('canciones', JSON.stringify(cancionRecuperadas));
+}
+
+
 
 
 //AGREGAR CANCION
@@ -65,8 +90,6 @@ formAgregarCancion.addEventListener("submit", (e) => {
     let artista = document.getElementById(`artista-agregar`).value
     let mood = document.getElementById(`mood-agregar`).value
     let link = document.getElementById(`link-agregar`).value
-
-
 
     let nuevaCancion = new Cancion(id, nombre, artista, mood, link, false)
     canciones.push(nuevaCancion)

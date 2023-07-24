@@ -93,15 +93,10 @@
         <div class="container text-center">
             <h3>Canciones</h3>
             <form class="d-flex" role="search">
-                <input id="texto-buscador" class="form-control me-2" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
+                <input type="search" id="texto-buscador" class="form-control me-2" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
                 <button id="botonBuscador" class="btn btn-outline-success">Buscar</button>
-
             </form>
             <p id="error-buscador"></p>
-            <div id="contenedor-filtro" class="d-none d-flex justify-content-center">
-                <p id="texto-filtro"></p>
-                <a id="quitar-filtro" class="fa-solid fa-ban mt-1" style="text-decoration: none;"></a>
-            </div>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -115,10 +110,7 @@
                     <!-- aca van las canciones que se agregan con la funcion mostrarCanciones() -->
 
                 </tbody>
-                <tbody id="tabla-canciones-filtrada">
-                    <!-- aca van las canciones que se agregan con la funcion mostrarCanciones() -->
 
-                </tbody>
             </table>
         </div>
         <div id="reproductor" class="text-center">

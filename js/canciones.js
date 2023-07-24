@@ -52,6 +52,7 @@ function mostrarCanciones() {
             );
         });
 
+
         tablaCanciones.innerHTML = "";
         for (let i = 0; i < cancionesFiltradas.length; i++) {
             let cancion = cancionesFiltradas[i];
