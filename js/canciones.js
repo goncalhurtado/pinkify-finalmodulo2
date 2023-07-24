@@ -57,7 +57,19 @@ function mostrarCanciones() {
         portada.classList.toggle(`d-none`)
         ocultarPortada.classList.toggle(`position-absolute`)
         contenedorPortada.classList.toggle(`position-relative`)
-        ocultarPortada.innerHTML = portada.classList.contains('d-none') ? `Mostrar Portada` : `Ocultar`
+        ocultarPortada.innerHTML = portada.classList.contains('d-none') ? ' Mostrar Portada' : '';
+
+        const ocultar = portada.classList.contains('d-none');
+
+        ocultarPortada.classList.remove('fa-chevron-up', 'fa-chevron-down', 'fa-2x');
+
+        if (ocultar) {
+            ocultarPortada.classList.add('fa-chevron-up');
+        } else {
+            ocultarPortada.classList.add('fa-chevron-down', 'fa-2x');
+        }
+
+        // ocultarPortada.classList.add('fa-2x');
     })
 
     function buscarCanciones() {
