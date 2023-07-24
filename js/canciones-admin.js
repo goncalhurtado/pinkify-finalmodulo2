@@ -9,9 +9,6 @@ if (usuarioLogueadoAdmin === null) {
     console.log(`esta logueado el ADMIN ${usuarioLogueadoAdmin.nombre}`);
 }
 
-//editor de canciones
-
-
 let tablaCanciones = document.getElementById("tabla-canciones")
 
 function mostrarCancionesAdmin() {
@@ -28,7 +25,7 @@ function mostrarCancionesAdmin() {
             <td id="artista-cancion">${cancion.artista}</td>
             <td id="estado-cancion">${cancion.estaOculta?"Oculto":"Visible"}</td>
             <td>
-                <a href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
+                <a id="botonEditar-${cancion.id}" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
                 <a id="botonOcultar-${cancion.id}" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2" style="text-decoration: none;" >
                 <a href="" class="fa-solid fa-trash text-danger" style="text-decoration: none">
             </td>
@@ -36,6 +33,27 @@ function mostrarCancionesAdmin() {
         `
 
     }
+
+    //boton editar
+    cancionRecuperadas.forEach(cancion => {
+        const botonEditar = document.getElementById(`botonEditar-${cancion.id}`);
+        botonEditar.addEventListener('click', (e) => {
+            e.preventDefault();
+            let id = document.getElementById(`id-editar`);
+            id.value = `${cancion.id}`
+            let nombre = document.getElementById(`nombre-editar`)
+            nombre.value = `${cancion.nombre}`
+            let artista = document.getElementById(`artista-editar`)
+            artista.value = `${cancion.artista}`
+            let mood = document.getElementById(`mood-editar`)
+            mood.value = `${cancion.mood}`
+            let link = document.getElementById(`link-editar`)
+            link.value = `${cancion.link}`
+
+        });
+    });
+
+    //boton ocultar
 
     cancionRecuperadas.forEach(cancion => {
         const botonOcultar = document.getElementById(`botonOcultar-${cancion.id}`);
@@ -53,6 +71,44 @@ function mostrarCancionesAdmin() {
 
 
 }
+
+
+//EDITAR CANCION
+
+formEditarCancion.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let id = document.getElementById(`id-editar`).value
+    let nombre = document.getElementById(`nombre-editar`).value
+    let artista = document.getElementById(`artista-editar`).value
+    let mood = document.getElementById(`mood-editar`).value
+    let link = document.getElementById(`link-editar`).value
+
+    let canciones = JSON.parse(localStorage.getItem("canciones"));
+
+    //encontrar el index trayendolo del boton
+    let index = -1;
+    for (i = 0; i < canciones.length; i++) {
+        if (canciones[i].id == id) {
+            console.log(`lo encontro`);
+            index = i
+            break
+        }
+    }
+
+    canciones[index].nombre = nombre;
+    canciones[index].artista = artista;
+    canciones[index].mood = mood;
+    canciones[index].link = link;
+
+    alert(`cancion editada correctamente`);
+
+    localStorage.setItem("canciones", JSON.stringify(canciones))
+    formEditarCancion.reset()
+    window.location.reload();
+})
+
+
+//OCULTAR, MOSTRAR CANCION
 
 function ocultarCancion(id) {
     const cancionesString = localStorage.getItem('canciones');
@@ -81,7 +137,6 @@ function mostrarCancion(id) {
 }
 
 
-
 //AGREGAR CANCION
 
 let idRandom = () => {
@@ -104,6 +159,10 @@ formAgregarCancion.addEventListener("submit", (e) => {
     alert(`cancion agregada correctamente`);
     window.location.reload();
 })
+
+// EDITAR CANCION
+
+
 
 
 mostrarCancionesAdmin()

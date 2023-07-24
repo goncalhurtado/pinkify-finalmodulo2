@@ -40,6 +40,7 @@
         <div class="container text-center">
             <h3>EDITOR DE CANCIONES</h3>
             <button class="btn btn-outline-primary mt-2 mb-4" data-bs-toggle="modal" data-bs-target="#agregar-cancion">Agregar Canción</button>
+            <a href="../html/canciones.html" class="btn btn-primary mt-2 mb-4">Ir a canciones</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -49,19 +50,11 @@
                     <tr>
                         <th scope="col">Cancion</th>
                         <th scope="col">Artista</th>
+                        <th scope="col">Estado</th>
                         <th scope="col">Editar</th>
                 </thead>
                 <tbody id="tabla-canciones">
-                    <tr>
-                        <th scope="row">Volveras a mi cama</th>
-                        <td>Fabian Show</td>
-
-                        <td>
-                            <a href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
-                                <a href="" class="fa-solid fa-eye-slash me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#ocultar-cancion">
-                                    <a href="" class="fa-solid fa-trash" style="text-decoration: none">
-                        </td>
-                    </tr>
+                    <!-- aca van las canciones -->
 
             </table>
             <!-- <table class="table table-hover">
@@ -162,30 +155,44 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="formEditarCancion">
+                            <div class="mb-3 d-none">
+                                <label class="form-label">Id</label>
+                                <input type="text" class="form-control" id="id-editar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nombre de la cancion</label>
+                                <label class="form-label">Nombre de la cancion</label>
                                 <input type="text" class="form-control" id="nombre-editar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Artista</label>
+                                <label class="form-label">Artista</label>
                                 <input type="text" class="form-control" id="artista-editar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Estado de ánimo</label>
-                                <input type="text" class="form-control" id="mood-editar" aria-describedby="">
-                                <div id="" class="form-text"></div>
+                                <label class="form-label">Estado de ánimo</label>
+                                <select class="form-select" aria-label="Default select example" id="mood-editar">
+                                    <option >Seleccione el mood</option>
+                                    <option value="Alegre">Alegre</option>
+                                    <option value="Triste">Triste</option>
+                                    <option value="Melancolico">Melancolico</option>
+                                </select>
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Agregar link de audio</label>
+                                <input type="text" class="form-control" id="link-editar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Confirmar contraseña admin</label>
                                 <input type="password" class="form-control" id="" aria-describedby="">
                                 <div id="" class="form-text"></div>
                                 <div class="btn btn-outline-primary">Confirmar contraseña</div>
-                            </div>
+                            </div> -->
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mb-3 disabled">Guardar Edicion</button>
+                                <button type="submit" class="btn btn-primary mb-3 ">Guardar Edicion</button>
                             </div>
                         </form>
                     </div>
