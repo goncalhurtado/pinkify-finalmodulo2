@@ -7,7 +7,6 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/canciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/reproductor.css">
 </head>
@@ -35,7 +34,7 @@
                             <a class="nav-link active" aria-current="page" href="./canciones.html">Canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./descubrir.html">Descubrir (beta)</a>
+                            <a class="nav-link active" aria-current="page" href="#">Descubrir (beta)</a>
                         </li>
                         <li id="iniciar-sesion" class="nav-item">
                             <a class="nav-link active btn text-start" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
@@ -92,12 +91,45 @@
     </header>
     <main>
         <div class="container text-center">
-            <h3>Canciones</h3>
-            <form class="d-flex" role="search">
-                <input type="search" id="texto-buscador" class="form-control me-2" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
-                <button id="botonBuscador" class="btn btn-outline-success">Buscar</button>
-            </form>
-            <p id="error-buscador"></p>
+            <h2>Descubrir musica</h2>
+            <p class="bg-warning rounded-pill">Actualmente esta funcionalidad se encuentra en beta por lo que podria tener algunos errores, si tiene dudas <a href="">escribale a soporte</a></p>
+            <h5 class="mb-4">¿Como te sientes hoy?</h5>
+            <div class="row">
+                <div class="col">
+                    <a id="fiestero" class="fa-solid fa-champagne-glasses fa-2xl" style="text-decoration: none;"></a>
+                    <p>Fiestero</p>
+                </div>
+                <div class="col">
+                    <a class="fa-solid fa-bolt fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>Enérgico</p>
+                </div>
+                <div class="col">
+                    <a class="fa-solid fa-face-grin-hearts fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>Enamorado</p>
+                </div>
+                <div class="col">
+                    <a class="fa-solid fa-face-meh fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>Melancólico</p>
+                </div>
+                <div class="col">
+                    <a class="fa-regular fa-face-sad-cry fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>Triste</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a class="fa-solid fa-dice fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>Con suerte</p>
+                </div>
+                <div class="col">
+                    <a class="fa-solid fa-language fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>En español</p>
+                </div>
+                <div class="col">
+                    <a class="fa-solid fa-flag-usa fa-2xl" style="text-decoration: none;" href=""></a>
+                    <p>En inglés</p>
+                </div>
+            </div>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -113,6 +145,8 @@
                 </tbody>
 
             </table>
+
+            </table>
         </div>
         <div id="reproductor" class="text-center d-none">
             <div id="contenedor-portada" class="position-relative">
@@ -122,7 +156,7 @@
             <p class="m-0" id="informacion-reproductor"></p>
             <audio class="" id="audioPlayer" controlslist="nodownload" controls></audio>
         </div>
-
+        </div>
 
     </main>
     <footer class="bg-light text-dark pt-5 pb-4 ">
@@ -204,8 +238,9 @@
         </div>
 
     </footer>
+    <script src="../js/descubrir.js"></script>
     <script src="../js/base-de-datos.js"></script>
-    <script src="../js/canciones.js"></script>
+    <!-- <script src="../js/canciones.js"></script> -->
     <script src="../js/iniciar-sesion.js"></script>
     <script src="../js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js " integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r " crossorigin="anonymous "></script>
