@@ -1,3 +1,4 @@
+let tabla = document.getElementById(`tabla`);
 let tablaCanciones = document.getElementById("tabla-canciones")
 let reproductorInfo = document.getElementById("informacion-reproductor");
 
@@ -9,6 +10,8 @@ function obtenerNumeroAleatorio(arreglo) {
 
 
 function descubrirCanciones(mood) {
+    tabla.classList.remove("d-none")
+    tablaCanciones.innerHTML = "";
     const cancionesString = localStorage.getItem('canciones');
     const cancionRecuperadas = JSON.parse(cancionesString);
     const cancionesSinOcultar = cancionRecuperadas.filter(cancion => !cancion.estaOculta);
@@ -22,7 +25,7 @@ function descubrirCanciones(mood) {
         `
         <tr>
             <td>
-                <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play" style="text-decoration: none;">
+
             </td>
             <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
             <td id="artista-cancion">${cancion.artista}</td>
@@ -31,58 +34,139 @@ function descubrirCanciones(mood) {
             </td>
         </tr>
         `
+
+    let reproductor = document.getElementById(`reproductor`)
+    reproductor.classList.remove(`d-none`)
+    const audioPlayer = document.getElementById('audioPlayer');
+    const songUrl = cancion.link;
+    audioPlayer.src = songUrl;
+    audioPlayer.play();
+    reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
+    let portada = document.getElementById(`portada`);
+    portada.src = `${cancion.portada}`
+
 }
 
 
 let botonFiestero = document.getElementById(`fiestero`)
 botonFiestero.addEventListener("click", (e) => {
     e.preventDefault();
-    tablaCanciones.innerHTML += ""
     descubrirCanciones("Fiestero")
 })
 
+let botonEnergico = document.getElementById(`energico`)
+botonEnergico.addEventListener("click", (e) => {
+    e.preventDefault();
+    descubrirCanciones("Alegre")
+})
 
-// FUNCIONALIDAD BOTON FIESTERO
+let botonEnamorado = document.getElementById(`enamorado`)
+botonEnamorado.addEventListener("click", (e) => {
+    e.preventDefault();
+    descubrirCanciones("Romántico")
+})
 
-// let cancionesFiestero = cancionesSinOcultar.filter(cancion => cancion.mood === "Fiestero");
-// console.log(cancionesFiestero);
+let botonMelancolico = document.getElementById(`melancolico`)
+botonMelancolico.addEventListener("click", (e) => {
+    e.preventDefault();
+    descubrirCanciones("Melancólico")
+})
 
-// cancionesFiestero.forEach(cancion => {
-//     const botonFiestero = document.getElementById(`botonPlay-${cancion.id}`);
-//     botonFiestero.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         console.log(`1`);
-//         let reproductor = document.getElementById(`reproductor`)
-//         reproductor.classList.remove(`d-none`)
-//         const audioPlayer = document.getElementById('audioPlayer');
-//         const songUrl = cancion.link;
-//         audioPlayer.src = songUrl;
-//         audioPlayer.play();
-//         reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
-//         let portada = document.getElementById(`portada`);
-//         portada.src = `${cancion.portada}`
-//     });
-// });
+let botonTriste = document.getElementById(`triste`)
+botonTriste.addEventListener("click", (e) => {
+    e.preventDefault();
+    descubrirCanciones("Triste")
+})
 
-// //reproductor informacion
-// let contenedorPortada = document.getElementById(`contenedor-portada`)
-// let ocultarPortada = document.getElementById(`ocultar-portada`);
-// ocultarPortada.addEventListener("click", (e) => {
-//     e.preventDefault();
+function cancionRandom() {
+    tabla.classList.remove("d-none")
+    tablaCanciones.innerHTML = "";
+    const cancionesString = localStorage.getItem('canciones');
+    const cancionRecuperadas = JSON.parse(cancionesString);
+    const cancionesSinOcultar = cancionRecuperadas.filter(cancion => !cancion.estaOculta);
 
-//     portada.classList.toggle(`d-none`)
-//     ocultarPortada.classList.toggle(`position-absolute`)
-//     contenedorPortada.classList.toggle(`position-relative`)
-//     ocultarPortada.innerHTML = portada.classList.contains('d-none') ? ' Mostrar Portada' : '';
+    let indexCancion = obtenerNumeroAleatorio(cancionesSinOcultar);
+    let cancion = cancionesSinOcultar[indexCancion];
 
-//     const ocultar = portada.classList.contains('d-none');
 
-//     ocultarPortada.classList.remove('fa-chevron-up', 'fa-chevron-down', 'fa-2x');
+    tablaCanciones.innerHTML +=
+        `
+    <tr>
+        <td>
 
-//     if (ocultar) {
-//         ocultarPortada.classList.add('fa-chevron-up');
-//     } else {
-//         ocultarPortada.classList.add('fa-chevron-down', 'fa-2x');
-//     }
+        </td>
+        <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
+        <td id="artista-cancion">${cancion.artista}</td>
+        <td>
+             <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
+        </td>
+    </tr>
+    `
 
-// })
+    let reproductor = document.getElementById(`reproductor`)
+    reproductor.classList.remove(`d-none`)
+    const audioPlayer = document.getElementById('audioPlayer');
+    const songUrl = cancion.link;
+    audioPlayer.src = songUrl;
+    audioPlayer.play();
+    reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
+    let portada = document.getElementById(`portada`);
+    portada.src = `${cancion.portada}`
+}
+
+let botonSuerte = document.getElementById(`suerte`)
+botonSuerte.addEventListener("click", (e) => {
+    e.preventDefault();
+    cancionRandom();
+})
+
+
+function cancionIdioma(idioma) {
+    tabla.classList.remove("d-none")
+    tablaCanciones.innerHTML = "";
+    const cancionesString = localStorage.getItem('canciones');
+    const cancionRecuperadas = JSON.parse(cancionesString);
+    const cancionesSinOcultar = cancionRecuperadas.filter(cancion => !cancion.estaOculta);
+
+    let cancionesIdioma = cancionesSinOcultar.filter(cancion => cancion.idioma === idioma);
+
+    let indexCancion = obtenerNumeroAleatorio(cancionesIdioma);
+    let cancion = cancionesIdioma[indexCancion];
+
+
+    tablaCanciones.innerHTML +=
+        `
+        <tr>
+            <td>
+
+            </td>
+            <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
+            <td id="artista-cancion">${cancion.artista}</td>
+            <td>
+                 <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
+            </td>
+        </tr>
+        `
+
+    let reproductor = document.getElementById(`reproductor`)
+    reproductor.classList.remove(`d-none`)
+    const audioPlayer = document.getElementById('audioPlayer');
+    const songUrl = cancion.link;
+    audioPlayer.src = songUrl;
+    audioPlayer.play();
+    reproductorInfo.innerHTML = `${cancion.nombre} de ${cancion.artista}`
+    let portada = document.getElementById(`portada`);
+    portada.src = `${cancion.portada}`
+}
+
+let botonEspaniol = document.getElementById(`espaniol`)
+botonEspaniol.addEventListener("click", (e) => {
+    e.preventDefault();
+    cancionIdioma("espaniol");
+})
+
+let botonIngles = document.getElementById(`ingles`)
+botonIngles.addEventListener("click", (e) => {
+    e.preventDefault();
+    cancionIdioma("ingles");
+})
