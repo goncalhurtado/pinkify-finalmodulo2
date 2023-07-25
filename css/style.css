@@ -1,3 +1,65 @@
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    /* Peso de la fuente "ExtraBold" */
+}
+
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c';
+    background: #0E061F;
+}
+
+.nav-link {
+    color: #ffffff!important;
+    font-family: "M PLUS Rounded 1c";
+    font-weight: normal!important;
+    font-size: 16px;
+}
+
+.navbar-brand {
+    color: #ffffff!important;
+}
+
+.navbar {
+    background-color: #0E061F !important;
+    color: #FFFFFF!important;
+}
+
+.btn-light {
+    background-color: #DC2DEA!important;
+}
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
 .imagen-playlist {
     width: 140px;
     height: 160px;
