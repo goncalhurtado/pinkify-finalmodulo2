@@ -22,44 +22,6 @@ body {
     background: #0E061F;
 }
 
-.nav-link {
-    color: #ffffff!important;
-    font-family: "M PLUS Rounded 1c";
-    font-weight: normal!important;
-    font-size: 16px;
-}
-
-.navbar-brand {
-    color: #ffffff!important;
-}
-
-.navbar {
-    background-color: #0E061F !important;
-    color: #FFFFFF!important;
-}
-
-.btn-light {
-    background-color: #DC2DEA!important;
-}
-
-
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-
 .imagen-playlist {
     width: 140px;
     height: 160px;
