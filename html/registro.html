@@ -7,15 +7,20 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/canciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reproductor.css">
+    <link rel="stylesheet" href="../css/modales.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <a class="navbar-brand" href="#">pinkify</a>
+                <img src="../assets/img/pinkyNavbar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <a class="navbar-brand ms-3" href="">Pinkify</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,46 +35,8 @@
                             <a class="nav-link active" aria-current="page" href="./canciones.html">Canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Descubrir (beta)</a>
+                            <a class="nav-link active" aria-current="page" href="./descubrir.html">Descubrir (beta)</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link active btn text-start" aria-current="page" href="#" id="iniciar-sesion" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
-                        </li> -->
-                        <!-- MODAL DE INICIAR SESION -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesion</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Mail</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                <div id="emailHelp" class="form-text"></div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1">
-                                            </div>
-                                            <div class="text-center">
-
-                                                <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
-                                                <p><a class="link-offset-1" href="#">¿Se te ha olvidado la contraseña?</a></p>
-                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="#">Suscríbete a pinkify</a></p>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
 
                     </ul>
                 </div>
@@ -78,119 +45,90 @@
     </header>
     <main>
         <div class="container">
-
             <form class="well form-horizontal" action="" id="registro">
                 <div class="text-center">
-                    <h2>Registrate</h2>
+                    <h2 class="text-white">Registrate</h2>
                 </div><br>
-                <!-- nombre -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Nombre</label>
-                    <input id="nombre-registro" name="first_name" placeholder="First Name" class="form-control" type="text">
+                <div class="mb-3 form-registro">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
+                        <label class="control-label text-white mb-1">Nombre</label>
+                        <input id="nombre-registro" name="first_name" placeholder="Nombre" class="form-control" type="text">
+                    </div>
                 </div>
-                <!-- apellido -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Apellido</label>
-                    <input id="apellido-registro" name="last_name" placeholder="Last Name" class="form-control" type="text">
+                <div class="mb-3 form-registro">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
+                        <label class="control-label text-white mb-1">Apellido</label>
+                        <input id="apellido-registro" name="last_name" placeholder="Apellido" class="form-control" type="text">
+                    </div>
                 </div>
-                <!-- fecha de nacimiento -->
-                <!-- <div class="mb-3">
-                    <label class="col-md-4 control-label">Fecha de nacimiento</label>
-                    <input name="user_name" placeholder="fecha de nacimiento" class="form-control" type="date">
-                </div> -->
-                <!-- mail -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Mail</label>
-                    <input id="email-registro" name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                <div class="mb-3 form-registro">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
+                        <label class="control-label text-white mb-1">Mail</label>
+                        <input id="email-registro" name="email" placeholder="Ejemplo@mail.com" class="form-control" type="text">
+                    </div>
                 </div>
-                <!-- contraseña -->
-                <div class="mb-3">
-                    <label class="col-md-4 control-label">Contraseña</label>
-                    <input id="password-registro" name="password" placeholder="Password" class="form-control" type="password">
+                <div class="mb-3 form-registro">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
+                        <label class="control-label text-white mb-1">Contraseña</label>
+                        <input id="password-registro" name="password" placeholder="Contraseña" class="form-control" type="password">
+                    </div>
                 </div>
-                <!-- submit -->
-                <p class="error" id="error"></p>
+                <p class="error text-white col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto" id="error"></p>
                 <div class="text-center">
-                    <button class="btn btn-outline-primary" type="submit">Registrarse</button>
+                    <button class="btn btn-light boton-iniciar ps-3 pe-3 text-white mt-3" type="submit">Registrarse</button>
                 </div>
-
             </form>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-light text-dark pt-5 pb-4">
-        <div class="container text-center text-md-start">
+    <footer class="text-white pt-5 pb-4">
+
+        <div class="container-fluid text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Nosotros</h5>
+                    <h5 class="text-uppercase mb-4 text-white">Acerca de nosotros</h5>
                     <hr class="mb-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nemo quia nihil.</p>
+                    <a href="">
+                        <p class="text-white">Conoce mas sobre nosotros!</p>
+                    </a>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Dejanos ayuda</h5>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">Comunidades</h5>
                     <hr class="mb-4">
                     <p>
-                        <a href="">cuenta</a>
+                        <a class="text-white" href="">Desarrolladores</a>
                     </p>
                     <p>
-                        <a href="">cuenta</a>
+                        <a class="text-white" href="">Publicidad</a>
                     </p>
                     <p>
-                        <a href="">cuenta</a>
+                        <a class="text-white" href="">Inversores</a>
                     </p>
                     <p>
-                        <a href="">cuenta</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">dinero</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
-                    </p>
-                    <p>
-                        <a href="">ej</a>
+                        <a class="text-white" href="">Proveedores</a>
                     </p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-primary">Contacto</h5>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
                     <hr class="mb-4">
-                    <p>
-                        <li class="fas fa-home me-3"></li> Mexico, ciudad 255
-                    </p>
-                    <p>
-                        <li class="fas fa-envelope me-3"></li> mailo@ejemplo
-                    </p>
-                    <p>
-                        <li class="fas fa-home me-3"></li> +123456
-                    </p>
-                    <p>
-                        <li class="fas fa-print me-3"></li> +555
-                    </p>
+                    <p><a class="link-offset-1 text-white" href="./admin.html">Iniciar sesion como Admin</a></p>
+
                 </div>
                 <hr class="mb-4">
                 <div class="text-center mb-2">
-                    <p>Copyright
-                        <a href="">test</a>
-                    </p>
+                    <p>© 2023 Pinkify. Todos los derechos reservados.</p>
                 </div>
                 <div class="text-center">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <p><a class="link-offset-1" href="./admin.html">Iniciar sesion como Admin</a></p>
+                            <a href="" class="fab fa-instagram text-white" style="text-decoration: none;"></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="" class="fab fa-youtube"></a>
+                            <a href="" class="fab fa-youtube text-white" style="text-decoration: none;"></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="" class="fab fa-linkedin"></a>
+                            <a href="" class="fab fa-linkedin text-white" style="text-decoration: none;"></a>
                         </li>
                     </ul>
                 </div>
