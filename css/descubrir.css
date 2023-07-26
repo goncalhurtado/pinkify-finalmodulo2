@@ -1,0 +1,23 @@
+:root {
+    --dark: #0E061F;
+    --primario: #261C35;
+    --secundario: #DC2DEA;
+    --terciario: #FFE1FE;
+}
+
+.col p {
+    color: var(--terciario);
+}
+
+.col a {
+    color: var(--secundario);
+}
+
+.rounded-pill {
+    background: var(--primario);
+    color: var(--terciario);
+}
+
+.rounded-pill a {
+    color: var(--secundario);
+}

@@ -1,4 +1,23 @@
+:root {
+    --dark: #0E061F;
+    --primario: #261C35;
+    --secundario: #DC2DEA;
+    --terciario: #FFE1FE;
+}
+
 #portada {
     width: 225px;
     height: 225px;
+}
+
+audio::-webkit-media-controls-play-button {
+    color: var(--terciario);
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--terciario);
+}
+
+audio {
+    background-color: var(--terciario);
 }

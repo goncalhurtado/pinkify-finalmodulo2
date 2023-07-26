@@ -23,17 +23,17 @@ function descubrirCanciones(mood) {
 
     tablaCanciones.innerHTML +=
         `
-        <tr>
-            <td>
+    <tr >
+        <td class="table-oscuro">
 
-            </td>
-            <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
-            <td id="artista-cancion">${cancion.artista}</td>
-            <td>
-                 <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
-            </td>
-        </tr>
-        `
+        </td>
+        <th class="table-oscuro" id="nombre-cancion" scope="row">${cancion.nombre}</th>
+        <td class="table-oscuro " id="artista-cancion">${cancion.artista}</td>
+        <td class="table-oscuro text-center">
+        <a href="" class="fa-sharp fa-regular fa-heart text-white" style="text-decoration: none;">
+        </td>
+    </tr>
+    `
 
     let reproductor = document.getElementById(`reproductor`)
     reproductor.classList.remove(`d-none`)
@@ -91,14 +91,14 @@ function cancionRandom() {
 
     tablaCanciones.innerHTML +=
         `
-    <tr>
-        <td>
+    <tr >
+        <td class="table-oscuro">
 
         </td>
-        <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
-        <td id="artista-cancion">${cancion.artista}</td>
-        <td>
-             <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
+        <th class="table-oscuro" id="nombre-cancion" scope="row">${cancion.nombre}</th>
+        <td class="table-oscuro " id="artista-cancion">${cancion.artista}</td>
+        <td class="table-oscuro text-center">
+        <a href="" class="fa-sharp fa-regular fa-heart text-white" style="text-decoration: none;">
         </td>
     </tr>
     `
@@ -136,17 +136,18 @@ function cancionIdioma(idioma) {
 
     tablaCanciones.innerHTML +=
         `
-        <tr>
-            <td>
+    <tr >
+        <td class="table-oscuro">
 
-            </td>
-            <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
-            <td id="artista-cancion">${cancion.artista}</td>
-            <td>
-                 <a href="" class="fa-sharp fa-regular fa-heart" style="text-decoration: none;">
-            </td>
-        </tr>
-        `
+        </td>
+        <th class="table-oscuro" id="nombre-cancion" scope="row">${cancion.nombre}</th>
+        <td class="table-oscuro " id="artista-cancion">${cancion.artista}</td>
+        <td class="table-oscuro text-center">
+        <a href="" class="fa-sharp fa-regular fa-heart text-white" style="text-decoration: none;">
+        </td>
+    </tr>
+    `
+
 
     let reproductor = document.getElementById(`reproductor`)
     reproductor.classList.remove(`d-none`)
