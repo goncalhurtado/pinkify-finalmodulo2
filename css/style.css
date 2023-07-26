@@ -22,6 +22,14 @@ body {
     background: #0E061F;
 }
 
+.colorfondo {
+    background: #0E061F!important;
+}
+
+.colorblanco {
+    background: #FFFFFF!important;
+}
+
 .imagen-playlist {
     width: 140px;
     height: 160px;

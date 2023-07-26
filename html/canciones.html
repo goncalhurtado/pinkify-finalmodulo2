@@ -10,14 +10,17 @@
     <link rel="stylesheet" href="../css/canciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/reproductor.css">
+    <link rel="stylesheet" href="../css/modales.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <a class="navbar-brand" href="#">pinkify</a>
+                <img src="../assets/img/pinkyNavbar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <a class="navbar-brand ms-3" href="">Pinkify</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +41,7 @@
                             <a class="nav-link active" aria-current="page" href="./descubrir.html">Descubrir (beta)</a>
                         </li>
                         <li id="iniciar-sesion" class="nav-item">
-                            <a class="nav-link active btn text-start" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
+                            <a class="nav-link active btn text-lg-start text-md-start text-xl-start text-xxl-start text-sd-center btn btn-light ms-2 ps-3 pe-3 boton-iniciar" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
                         </li>
                         <li id="usuario-navbar" class="nav-item dropdown me-5 pe-5">
                             <a id="nombre-logueado" class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tu Perfil
@@ -55,11 +58,11 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesion</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <form id="login">
-                                            <div class="mb-3">
+                                    <div class="modal-body colorfondo">
+                                        <form id="login" class="colorfondo">
+                                            <div class="mb-3 colorfondo">
                                                 <label for="exampleInputEmail1" class="form-label">Mail</label>
                                                 <input id="#email-login" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
@@ -69,17 +72,15 @@
                                                 <input id="#password-login" type="password" class="form-control" id="exampleInputPassword1">
                                             </div>
                                             <div class="text-center">
-                                                <p id="error-login"></p>
-                                                <button id="" type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
-                                                <p><a class="link-offset-1" href="#">¿Se te ha olvidado la contraseña?</a></p>
-                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1" href="../html/registro.html">Suscríbete a pinkify</a></p>
+                                                <p class="text-white" id="error-login"></p>
+                                                <button id="" type="submit" class="btn btn-light mb-3 ps-3 pe-3 boton-iniciar text-white">Iniciar Sesion</button>
+
+                                                <p><a class="link-offset-1 text-white" href="#">¿Olvidaste tu contraseña?</a></p>
+                                                <p>¿No tienes cuenta?<a class="link-offset-1 ms-1 texto-rosa" href="./registro.html">Registrate en Pinkify</a></p>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -92,22 +93,24 @@
     </header>
     <main>
         <div class="container text-center">
-            <h3>Canciones</h3>
+            <div class="d-flex">
+                <h3 class="text-white">Canciones</h3>
+            </div>
             <form class="d-flex" role="search">
                 <input type="search" id="texto-buscador" class="form-control me-2" placeholder="Buscar por nombre de cancion o artista" aria-label="Search">
-                <button id="botonBuscador" class="btn btn-outline-success">Buscar</button>
+                <button id="botonBuscador" class="btn btn-light boton-iniciar text-white ps-3 pe-3">Buscar</button>
             </form>
             <p id="error-buscador"></p>
             <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th></th>
-                        <th scope="col">Cancion</th>
-                        <th scope="col">Artista</th>
-                        <th scope="col">Agregar a favoritos</th>
+                    <tr class="text-start">
+                        <th class=""></th>
+                        <th class="" scope="col">Cancion</th>
+                        <th class="" scope="col">Artista</th>
+                        <th class="text-center" scope="col">Agregar a favoritos</th>
                     </tr>
                 </thead>
-                <tbody id="tabla-canciones">
+                <tbody id="tabla-canciones" class="text-start">
                     <!-- aca van las canciones que se agregan con la funcion mostrarCanciones() -->
 
                 </tbody>
@@ -116,87 +119,61 @@
         </div>
         <div id="reproductor" class="text-center d-none">
             <div id="contenedor-portada" class="position-relative">
-                <a id="ocultar-portada" class="fa-solid fa-chevron-down fa-2x position-absolute" style="text-decoration: none;"></a>
+                <a id="ocultar-portada" class="fa-solid fa-chevron-down fa-2x position-absolute texto-rosa-claro" style="text-decoration: none;"></a>
                 <img id="portada" src="" alt="">
             </div>
-            <p class="m-0" id="informacion-reproductor"></p>
+            <p class="m-0 texto-rosa-claro" id="informacion-reproductor"></p>
             <audio class="" id="audioPlayer" controlslist="nodownload" controls></audio>
         </div>
 
-
     </main>
-    <footer class="bg-light text-dark pt-5 pb-4 ">
-        <div class="container text-center text-md-start ">
-            <div class="row text-center text-md-start ">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 text-primary ">Nosotros</h5>
-                    <hr class="mb-4 ">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nemo quia nihil.</p>
+    <footer class="text-white pt-5 pb-4">
+
+        <div class="container-fluid text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">Acerca de nosotros</h5>
+                    <hr class="mb-4">
+                    <a href="">
+                        <p class="text-white">Conoce mas sobre nosotros!</p>
+                    </a>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 text-primary ">Dejanos ayuda</h5>
-                    <hr class="mb-4 ">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">Comunidades</h5>
+                    <hr class="mb-4">
                     <p>
-                        <a href=" ">cuenta</a>
+                        <a class="text-white" href="">Desarrolladores</a>
                     </p>
                     <p>
-                        <a href=" ">cuenta</a>
+                        <a class="text-white" href="">Publicidad</a>
                     </p>
                     <p>
-                        <a href=" ">cuenta</a>
+                        <a class="text-white" href="">Inversores</a>
                     </p>
                     <p>
-                        <a href=" ">cuenta</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 text-primary ">dinero</h5>
-                    <hr class="mb-4 ">
-                    <p>
-                        <a href=" ">ej</a>
-                    </p>
-                    <p>
-                        <a href=" ">ej</a>
-                    </p>
-                    <p>
-                        <a href=" ">ej</a>
-                    </p>
-                    <p>
-                        <a href=" ">ej</a>
+                        <a class="text-white" href="">Proveedores</a>
                     </p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 text-primary ">Contacto</h5>
-                    <hr class="mb-4 ">
-                    <p>
-                        <li class="fas fa-home me-3 "></li> Mexico, ciudad 255
-                    </p>
-                    <p>
-                        <li class="fas fa-envelope me-3 "></li> mailo@ejemplo
-                    </p>
-                    <p>
-                        <li class="fas fa-home me-3 "></li> +123456
-                    </p>
-                    <p>
-                        <li class="fas fa-print me-3 "></li> +555
-                    </p>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
+                    <hr class="mb-4">
+                    <p><a class="link-offset-1 text-white" href="./html/admin.html">Iniciar sesion como Admin</a></p>
+
                 </div>
-                <hr class="mb-4 ">
-                <div class="text-center mb-2 ">
-                    <p>Copyright
-                        <a href=" ">test</a>
-                    </p>
+                <hr class="mb-4">
+                <div class="text-center mb-2">
+                    <p>© 2023 Pinkify. Todos los derechos reservados.</p>
                 </div>
-                <div class="text-center ">
-                    <ul class="list-unstyled list-inline ">
-                        <li class="list-inline-item ">
-                            <p><a class="link-offset-1 " href="./admin.html ">Iniciar sesion como Admin</a></p>
+                <div class="text-center">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="" class="fab fa-instagram text-white" style="text-decoration: none;"></a>
                         </li>
-                        <li class="list-inline-item ">
-                            <a href=" " class="fab fa-youtube "></a>
+                        <li class="list-inline-item">
+                            <a href="" class="fab fa-youtube text-white" style="text-decoration: none;"></a>
                         </li>
-                        <li class="list-inline-item ">
-                            <a href=" " class="fab fa-linkedin "></a>
+                        <li class="list-inline-item">
+                            <a href="" class="fab fa-linkedin text-white" style="text-decoration: none;"></a>
                         </li>
                     </ul>
                 </div>

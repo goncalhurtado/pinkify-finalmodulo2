@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+}
+
+.modal-header {
+    background: #0E061F!important;
+    border: none;
+}
+
+.boton-iniciar {
+    background-color: #DC2DEA!important;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 3px;
+}
+
+btn-close {
+    color: white;
+}
+
+.colorfondo {
+    background: #0E061F!important;
+}
+
+.colorblanco {
+    background: #FFFFFF!important;
+}
+
+.colorrosa {
+    background-color: #DC2DEA!important;
+}
+
+.texto-rosa {
+    color: #DC2DEA!important;
+}
