@@ -68,125 +68,124 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Cancion</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h3 class="modal-title fs-5 text-white text-center " id="exampleModalLabel">Agregar Cancion</h3>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <form id="formAgregarCancion">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nombre de la cancion</label>
-                                <input type="text" class="form-control" id="nombre-agregar" aria-describedby="">
+                    <div class="modal-body colorfondo">
+                        <form id="formAgregarCancion" class="colorfondo text-center">
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Nombre de la cancion</label>
+                                <input placeholder="nombre de la cancion" type="text" class="form-control " id="nombre-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Artista</label>
-                                <input type="text" class="form-control" id="artista-agregar" aria-describedby="">
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label colorfondo text-white">Artista</label>
+                                <input placeholder="artista" type="text" class="form-control" id="artista-agregar " aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Estado de ánimo</label>
-                                <select class="form-select" aria-label="Default select example" id="mood-agregar">
-                                    <option selected>Seleccione el mood</option>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Estado de ánimo</label>
+                                <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-agregar">
+                                    <option class=" text-white" selected>seleccione el mood</option>
                                     <option value="alegre">Alegre</option>
                                     <option value="triste">Triste</option>
                                     <option value="melancolico">Melancolico</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Agregar link de audio</label>
-                                <input type="text" class="form-control" id="link-agregar" aria-describedby="">
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Agregar link de audio</label>
+                                <input placeholder="link de audio" type="text" class="form-control" id="link-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary mb-3">Agregar Cancion</button>
+                            <div class="modal-footer border-0 text-center d-flex justify-content-center">
+                                <button type="button" class="btn btn-light boton-cerrar ps-3 pe-3" data-bs-dismiss="modal">Volver</button>
+                                <button type="submit" class="btn btn-light boton-iniciar ps-3 pe-3 pt-2 pb-2">Agregar Cancion</button>
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
+
                 </div>
             </div>
         </div>
         <!--  -->
 
         <!-- MODAL EDITAR CANCION -->
-        <div class="modal fade" id="editar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Canción</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="formEditarCancion">
-                            <div class="mb-3 d-none">
-                                <label class="form-label">Id</label>
-                                <input type="text" class="form-control" id="id-editar" aria-describedby="">
-                                <div id="" class="form-text"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Nombre de la cancion</label>
-                                <input type="text" class="form-control" id="nombre-editar" aria-describedby="">
-                                <div id="" class="form-text"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Artista</label>
-                                <input type="text" class="form-control" id="artista-editar" aria-describedby="">
-                                <div id="" class="form-text"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Estado de ánimo</label>
-                                <select class="form-select" aria-label="Default select example" id="mood-editar">
+        <div>
+            <div class="modal fade" id="editar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar Canción</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body colorfondo">
+                            <form id="formEditarCancion" class="text-white text-center">
+                                <div class="mb-3 d-none">
+                                    <label class="form-label">Id</label>
+                                    <input type="text" class="form-control" id="id-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Nombre de la cancion</label>
+                                    <input type="text" class="form-control" id="nombre-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Artista</label>
+                                    <input type="text" class="form-control" id="artista-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Estado de ánimo</label>
+                                    <select class="form-select colorfondo" aria-label="Default select example" id="mood-editar">
                                     <option >Seleccione el mood</option>
                                     <option value="Alegre">Alegre</option>
                                     <option value="Triste">Triste</option>
                                     <option value="Melancolico">Melancolico</option>
                                 </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Agregar link de audio</label>
+                                    <input type="text" class="form-control" id="link-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="modal-footer border-0 text-center d-flex justify-content-center">
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-light boton-cerrar ps-3 pe-3" data-bs-dismiss="modal">Volver</button>
+                                        <button type="submit" class="btn btn-light boton-iniciar ps-3 pe-3 pt-2 pb-2">Guardar Edicion</button>
+                                    </div>
+                            </form>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Agregar link de audio</label>
-                                <input type="text" class="form-control" id="link-editar" aria-describedby="">
-                                <div id="" class="form-text"></div>
-                            </div>
-
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary mb-3 ">Guardar Edicion</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL OCULTAR CANCION -->
-        <div class="modal fade" id="eliminar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="texto-modal-eliminar"></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="confirmacion-eliminar" class="text-center">
-                            <div id="animacion-eliminar" class="d-none spinner-border text-danger" role="status">
-                            </div>
-                            <p class="d-none text-danger" id="texto-eliminar">Eliminando...</p>
-                            <button id="boton-conf" type="submit" class="btn btn-outline-danger mb-3">Eliminar Cancion</button>
                         </div>
-                        </form>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- MODAL OCULTAR CANCION -->
+            <div class="modal fade" id="eliminar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-white" id="texto-modal-eliminar"></h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white colorfondo">
+                            <div id="confirmacion-eliminar" class="text-center text-white">
+                                <div id="animacion-eliminar" class="d-none spinner-border text-danger" role="status">
+                                </div>
+                                <p class="d-none text-danger" id="texto-eliminar">Eliminando...</p>
+                                <button id="boton-conf" type="submit" class="btn btn-outline-danger">Eliminar Cancion</button>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center colorfondo">
+                            <button type="button" class="btn boton-cerrar" data-bs-dismiss="modal">Volver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
     </main>
     <footer class="text-white pt-5 pb-4">
 
@@ -246,7 +245,6 @@
 
     <script src="../js/base-de-datos.js"></script>
     <script src="../js/canciones-admin.js"></script>
-    <script></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>

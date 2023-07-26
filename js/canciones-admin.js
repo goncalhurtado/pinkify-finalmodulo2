@@ -103,6 +103,7 @@ function mostrarCancionesAdmin() {
         const botonEliminar = document.getElementById(`botonEliminar-${cancion.id}`);
         botonEliminar.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log(`asd`);
             let textoModal = document.getElementById(`texto-modal-eliminar`)
             textoModal.innerHTML = `¿Estas seguro que quieres eliminar ${cancion.nombre}?`
 
