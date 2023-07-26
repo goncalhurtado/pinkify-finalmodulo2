@@ -20,3 +20,9 @@
     color: #261C35;
     border: #261C35 solid 2px;
 }
+
+.tabla-oculta {
+    background-color: #0e061fa2!important;
+    border: none;
+    color: #FFE1FE!important;
+}

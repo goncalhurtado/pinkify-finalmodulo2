@@ -20,13 +20,13 @@ function mostrarCancionesAdmin() {
 
         tablaCanciones.innerHTML +=
             `
-        <tr class=" ${cancion.estaOculta?"table-secondary":""}">
-            <th id="nombre-cancion" scope="row">${cancion.nombre}</th>
-            <td id="artista-cancion">${cancion.artista}</td>
-            <td id="estado-cancion">${cancion.estaOculta?"Oculto":"Visible"}</td>
-            <td>
-                <a id="botonEditar-${cancion.id}" href="" class="fa-solid fa-pen-to-square me-2" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
-                <a id="botonOcultar-${cancion.id}" href="" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2" style="text-decoration: none;" >
+        <tr  class="">
+            <td class="${cancion.estaOculta?"tabla-oculta":"table-oscuro"}" id="nombre-cancion" scope="row">${cancion.nombre}</td>
+            <td class="${cancion.estaOculta?"tabla-oculta":"table-oscuro"}" id="artista-cancion">${cancion.artista}</td>
+            <td class="${cancion.estaOculta?"tabla-oculta":"table-oscuro"}" id="estado-cancion">${cancion.estaOculta?"Oculto":"Visible"}</td>
+            <td class="${cancion.estaOculta?"tabla-oculta":"table-oscuro"} text-center">
+                <a id="botonEditar-${cancion.id}" href="" class="fa-solid fa-pen-to-square me-2 text-white" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editar-cancion">
+                <a id="botonOcultar-${cancion.id}" href="" class="fa-solid ${cancion.estaOculta?"fa-eye":"fa-eye-slash"} me-2 text-white" style="text-decoration: none;" >
                 <a id="botonEliminar-${cancion.id}" href="" class="fa-solid fa-trash text-danger" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#eliminar-cancion">
             </td>
         </tr>
@@ -141,8 +141,6 @@ function mostrarCancionesAdmin() {
 
         });
     });
-
-
 }
 
 
