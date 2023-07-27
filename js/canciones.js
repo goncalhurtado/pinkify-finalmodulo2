@@ -18,12 +18,12 @@ function mostrarCanciones() {
             `
         <tr >
             <td class="table-oscuro">
-                <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play" style="text-decoration: none;">
+                <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play texto-rosa" style="text-decoration: none;">
             </td>
-            <th class="table-oscuro break-word" id="nombre-cancion" scope="row">${cancion.nombre}</th>
+            <th class="table-oscuro break-word" id="nombre-cancion botonPlay-${cancion.id}" scope="row">${cancion.nombre}</th>
             <td class="table-oscuro " id="artista-cancion">${cancion.artista}</td>
             <td class="table-oscuro text-center">
-                 <a href="" class="fa-sharp fa-regular fa-heart text-white table-oscuro" style="text-decoration: none;">
+                 <a href="" class="fa-sharp fa-regular fa-heart table-oscuro texto-rosa botonfav" style="text-decoration: none;">
             </td>
         </tr>
         `
@@ -89,12 +89,12 @@ function mostrarCanciones() {
                 `
             <tr >
                 <td class="table-oscuro">
-                    <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play" style="text-decoration: none;">
+                    <a id="botonPlay-${cancion.id}" href="" class="fa-solid fa-play texto-rosa" style="text-decoration: none;">
                 </td>
                 <th class="table-oscuro" id="nombre-cancion" scope="row">${cancion.nombre}</th>
                 <td class="table-oscuro " id="artista-cancion">${cancion.artista}</td>
                 <td class="table-oscuro text-center">
-                     <a href="" class="fa-sharp fa-regular fa-heart text-white table-oscuro" style="text-decoration: none;">
+                     <a href="" class="fa-sharp fa-regular fa-heart table-oscuro texto-rosa botonfav" style="text-decoration: none;">
                 </td>
             </tr>
             `;
