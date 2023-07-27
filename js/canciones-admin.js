@@ -49,6 +49,11 @@ function mostrarCancionesAdmin() {
             mood.value = `${cancion.mood}`
             let link = document.getElementById(`link-editar`)
             link.value = `${cancion.link}`
+            let portada = document.getElementById(`portada-editar`)
+            portada.value = `${cancion.portada}`
+            let idioma = document.getElementById(`idioma-editar`)
+            idioma.value = `${cancion.idioma}`
+
 
             formEditarCancion.addEventListener("submit", (e) => {
                 e.preventDefault()
@@ -56,10 +61,35 @@ function mostrarCancionesAdmin() {
                 let artista = document.getElementById(`artista-editar`).value
                 let mood = document.getElementById(`mood-editar`).value
                 let link = document.getElementById(`link-editar`).value
+                let portada = document.getElementById(`portada-editar`).value
+                let idioma = document.getElementById(`idioma-editar`).value
+                let error = document.getElementById(`error-editar`);
+
+
+                if (nombre === "" || artista === "" || link === "" || portada === "") {
+                    error.innerHTML = `todos los campos son obligatorios`;
+                    error.classList.add("text-bg-danger")
+                    error.classList.remove("d-none")
+                    setTimeout(() => {
+                        error.classList.add("d-none")
+                        error.classList.remove("text-bg-danger")
+                    }, 3000)
+                    return;
+                }
+
+                if (mood === "" || idioma === "") {
+                    error.innerHTML = `Debe seleccionar Mood e Idioma`;
+                    error.classList.add("text-bg-danger")
+                    error.classList.remove("d-none")
+                    setTimeout(() => {
+                        error.classList.add("d-none")
+                        error.classList.remove("text-bg-danger")
+                    }, 3000)
+                    return;
+                }
+
 
                 let canciones = JSON.parse(localStorage.getItem("canciones"));
-
-                //encontrar el index trayendolo del boton
                 let index = -1;
                 for (i = 0; i < canciones.length; i++) {
                     if (canciones[i].id == cancion.id) {
@@ -72,6 +102,8 @@ function mostrarCancionesAdmin() {
                 canciones[index].artista = artista;
                 canciones[index].mood = mood;
                 canciones[index].link = link;
+                canciones[index].portada = portada;
+                canciones[index].idioma = idioma;
 
                 localStorage.setItem("canciones", JSON.stringify(canciones))
                 formEditarCancion.reset()
@@ -89,10 +121,8 @@ function mostrarCancionesAdmin() {
             e.preventDefault();
             if (cancion.estaOculta === false) {
                 ocultarCancion(cancion.id)
-                console.log(`se ocultó la cancion ${cancion.nombre}`);
             } else {
                 mostrarCancion(cancion.id)
-                console.log(`se mostrò la cancion ${cancion.nombre}`);
             }
         });
     });
@@ -103,7 +133,6 @@ function mostrarCancionesAdmin() {
         const botonEliminar = document.getElementById(`botonEliminar-${cancion.id}`);
         botonEliminar.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(`asd`);
             let textoModal = document.getElementById(`texto-modal-eliminar`)
             textoModal.innerHTML = `¿Estas seguro que quieres eliminar ${cancion.nombre}?`
 
@@ -111,10 +140,8 @@ function mostrarCancionesAdmin() {
             confirmacionEliminar.addEventListener("click", (e) => {
                 e.preventDefault();
 
-
                 let canciones = JSON.parse(localStorage.getItem("canciones"));
 
-                //encontrar el index trayendolo del boton
                 let index = -1;
                 for (i = 0; i < canciones.length; i++) {
                     if (canciones[i].id == cancion.id) {

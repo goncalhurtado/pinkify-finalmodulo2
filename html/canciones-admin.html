@@ -75,33 +75,33 @@
                         <form id="formAgregarCancion" class="colorfondo text-center">
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Nombre de la cancion</label>
-                                <input placeholder="nombre de la cancion" type="text" class="form-control " id="nombre-agregar" aria-describedby="">
+                                <input placeholder="nombre de la cancion" type="text" class="form-control text-white" id="nombre-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label colorfondo text-white">Artista</label>
-                                <input placeholder="artista" type="text" class="form-control" id="artista-agregar" aria-describedby="">
+                                <input placeholder="artista" type="text" class="form-control text-white" id="artista-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Estado de ánimo</label>
                                 <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-agregar">
                                     <option class="text-white" value="">seleccione el mood</option>
-                                    <option value="alegre">Alegre</option>
-                                    <option value="triste">Triste</option>
-                                    <option value="melancolico">Melancolico</option>
-                                    <option value="fiestero">Fiestero</option>
-                                    <option value="romantico">Romántico</option>
+                                    <option value="Alegre">Alegre</option>
+                                    <option value="Triste">Triste</option>
+                                    <option value="Melancólico">Melancólico</option>
+                                    <option value="Fiestero">Fiestero</option>
+                                    <option value="Romántico">Romántico</option>
                                 </select>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Agregar link de audio</label>
-                                <input placeholder="link de audio" type="text" class="form-control" id="link-agregar" aria-describedby="">
+                                <input placeholder="link de audio" type="text" class="form-control text-white" id="link-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Agregar link de portada</label>
-                                <input placeholder="link de portada" type="text" class="form-control" id="portada-agregar" aria-describedby="">
+                                <input placeholder="link de portada" type="text" class="form-control text-white" id="portada-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
@@ -135,7 +135,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar Canción</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body colorfondo">
                             <form id="formEditarCancion" class="text-white text-center">
@@ -146,27 +146,45 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label text-center">Nombre de la cancion</label>
-                                    <input type="text" class="form-control" id="nombre-editar" aria-describedby="">
+                                    <input type="text" class="form-control text-white" id="nombre-editar" aria-describedby="">
                                     <div id="" class="form-text"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label text-center">Artista</label>
-                                    <input type="text" class="form-control" id="artista-editar" aria-describedby="">
+                                    <input type="text" class="form-control text-white" id="artista-editar" aria-describedby="">
                                     <div id="" class="form-text"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label text-center">Estado de ánimo</label>
-                                    <select class="form-select colorfondo" aria-label="Default select example" id="mood-editar">
-                                    <option >Seleccione el mood</option>
+                                    <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-editar">
+                                    <option selected class="text-white" value="">Seleccione el mood</option>
                                     <option value="Alegre">Alegre</option>
                                     <option value="Triste">Triste</option>
-                                    <option value="Melancolico">Melancolico</option>
+                                    <option value="Melancólico">Melancólico</option>
+                                    <option value="Fiestero">Fiestero</option>
+                                    <option value="Romántico">Romántico</option>
                                 </select>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label text-center">Agregar link de audio</label>
-                                    <input type="text" class="form-control" id="link-editar" aria-describedby="">
+                                    <input type="text" class="form-control text-white" id="link-editar" aria-describedby="">
                                     <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Agregar link de portada</label>
+                                    <input type="text" class="form-control text-white" id="portada-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3 text-center">
+                                    <label for="exampleInputEmail1" class="form-label text-white">Seleccione el idioma</label>
+                                    <select class="form-select colorfondo text-white" aria-label="Default select example" id="idioma-editar">
+                                        <option class="text-white" value="">seleccione el idioma</option>
+                                        <option value="espaniol">Español</option>
+                                        <option value="ingles">Ingles</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-editar"></p>
                                 </div>
                                 <div class="modal-footer border-0 text-center d-flex justify-content-center">
                                     <div class="text-center">
