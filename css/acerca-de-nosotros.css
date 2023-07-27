@@ -18,3 +18,8 @@ textarea {
 textarea::placeholder {
     color: #261C35;
 }
+
+.cuadro-acerca:hover {
+    transform: scale(1.04);
+    transition: transform 0.5s ease;
+}

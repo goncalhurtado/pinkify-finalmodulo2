@@ -56,3 +56,8 @@ input:focus {
 form:focus {
     color: var(--secundario)!important;
 }
+
+.cuadro-index:hover {
+    transform: scale(1.04);
+    transition: transform 0.5s ease;
+}
