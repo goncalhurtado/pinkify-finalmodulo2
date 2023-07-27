@@ -53,3 +53,8 @@ th {
 .texto-rosa-claro {
     color: var(--terciario)!important;
 }
+
+.break-word {
+    /* width: 200px; */
+    word-wrap: break-word!important;
+}

@@ -107,8 +107,13 @@ function mostrarCancionesAdmin() {
 
                 localStorage.setItem("canciones", JSON.stringify(canciones))
                 formEditarCancion.reset()
-                alert(`cancion editada correctamente`);
-                window.location.reload();
+                error.classList.remove("d-none")
+                error.classList.remove("text-bg-danger", "rounded-2", "ps-3", "pe-3")
+                error.classList.add("text-bg-success", "rounded-2", "ps-3", "pe-3")
+                error.innerHTML = "Cancion editada correctamente"
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000)
             })
         });
     });
@@ -260,9 +265,13 @@ formAgregarCancion.addEventListener("submit", (e) => {
     canciones.push(nuevaCancion)
     localStorage.setItem("canciones", JSON.stringify(canciones))
     formAgregarCancion.reset()
-    console.log(`cancion agregada correctamente`);
-    alert(`cancion agregada correctamente`);
-    window.location.reload();
+    error.classList.remove("d-none")
+    error.classList.remove("text-bg-danger", "rounded-2", "ps-3", "pe-3")
+    error.classList.add("text-bg-success", "rounded-2", "ps-3", "pe-3")
+    error.innerHTML = "Cancion agregada correctamente"
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000)
 })
 
 // ELIMINAR CANCION

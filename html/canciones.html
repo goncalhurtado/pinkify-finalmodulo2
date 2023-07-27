@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="../css/modales.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid">
                 <img src="../assets/img/pinkyNavbar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 <a class="navbar-brand ms-3" href="">Pinkify</a>
@@ -27,10 +28,6 @@
           </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
-                        <!-- <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> -->
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                         </li>
@@ -75,7 +72,7 @@
                                                 <p class="text-white d-none rounded-2 ps-3 ps-3" id="error-login"></p>
                                                 <button id="" type="submit" class="btn btn-light mb-3 ps-3 pe-3 boton-iniciar text-white">Iniciar Sesion</button>
 
-                                                <p><a class="link-offset-1 text-white" href="#">¿Olvidaste tu contraseña?</a></p>
+                                                <p><a class="link-offset-1 text-white" href="./error.html">¿Olvidaste tu contraseña?</a></p>
                                                 <p>¿No tienes cuenta?<a class="link-offset-1 ms-1 texto-rosa" href="./registro.html">Registrate en Pinkify</a></p>
                                             </div>
                                         </form>
@@ -107,7 +104,7 @@
                         <th class=""></th>
                         <th class="" scope="col">Cancion</th>
                         <th class="" scope="col">Artista</th>
-                        <th class="text-center" scope="col">Agregar a favoritos</th>
+                        <th class="text-center d-none d-sm-block" scope="col">Agregar a favoritos</th>
                     </tr>
                 </thead>
                 <tbody id="tabla-canciones" class="text-start">
@@ -137,27 +134,28 @@
                     <a href="./acerca-de-nosotros.html">
                         <p class="text-white">Acerca de nosotros</p>
                     </a>
+                    <div><img class="w-25" src="../assets/img/pinky-footer.png" alt=""></div>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-white">Comunidades</h5>
                     <hr class="mb-4">
                     <p>
-                        <a class="text-white" href="">Desarrolladores</a>
+                        <a class="text-white" href="./error.html">Desarrolladores</a>
                     </p>
                     <p>
-                        <a class="text-white" href="">Publicidad</a>
+                        <a class="text-white" href="./error.html">Publicidad</a>
                     </p>
                     <p>
-                        <a class="text-white" href="">Inversores</a>
+                        <a class="text-white" href="./error.html">Inversores</a>
                     </p>
                     <p>
-                        <a class="text-white" href="">Proveedores</a>
+                        <a class="text-white" href="./error.html">Proveedores</a>
                     </p>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
                     <hr class="mb-4">
-                    <p><a class="link-offset-1 text-white" href="../html/acerca-de-nosotros.html">Sección Admin</a></p>
+                    <p><a class="link-offset-1 text-white" href="./admin.html">Sección Admin</a></p>
 
                 </div>
                 <hr class="mb-4">
@@ -167,13 +165,13 @@
                 <div class="text-center">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <a href="" class="fab fa-instagram text-white" style="text-decoration: none;"></a>
+                            <a href="./error.html" class="fab fa-instagram text-white" style="text-decoration: none;"></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="" class="fab fa-youtube text-white" style="text-decoration: none;"></a>
+                            <a href="./error.html" class="fab fa-youtube text-white" style="text-decoration: none;"></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="" class="fab fa-linkedin text-white" style="text-decoration: none;"></a>
+                            <a href="./error.html" class="fab fa-linkedin text-white" style="text-decoration: none;"></a>
                         </li>
                     </ul>
                 </div>
