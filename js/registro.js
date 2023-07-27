@@ -47,6 +47,8 @@ formSignUp.addEventListener("submit", (e) => {
         return;
     }
 
+
+
     //validacion del mail
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$/;
     let emailValidado = regex.test(email); //esto devuelve true o false

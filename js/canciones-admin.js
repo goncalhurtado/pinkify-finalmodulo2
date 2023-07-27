@@ -189,18 +189,51 @@ formAgregarCancion.addEventListener("submit", (e) => {
     let link = document.getElementById(`link-agregar`).value
     let portada = document.getElementById(`portada-agregar`).value
     let idioma = document.getElementById(`idioma-agregar`).value
-    let error = document.getElementById(`error`);
+    let error = document.getElementById(`error-agregar`);
 
     if (nombre === "" || artista === "" || link === "" || portada === "") {
-
+        error.innerHTML = `todos los campos son obligatorios`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 3000)
+        return;
     }
 
+    if (mood === "" || idioma === "") {
+        error.innerHTML = `Debe seleccionar Mood e Idioma`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 3000)
+        return;
+    }
+
+
+    let validarCancion = canciones.find((cancion) => {
+        return cancion.nombre === nombre
+    });
+    if (validarCancion != undefined) {
+        error.innerHTML = `Esta cancion ya se encuentra en el catalogo`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        formAgregarCancion.reset()
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 4000)
+        return;
+    }
 
     let nuevaCancion = new Cancion(id, nombre, artista, mood, link, portada, idioma, false)
     canciones.push(nuevaCancion)
     localStorage.setItem("canciones", JSON.stringify(canciones))
     formAgregarCancion.reset()
-    console.log(canciones.length);
+    console.log(`cancion agregada correctamente`);
     alert(`cancion agregada correctamente`);
     window.location.reload();
 })

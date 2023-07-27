@@ -80,13 +80,13 @@
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label colorfondo text-white">Artista</label>
-                                <input placeholder="artista" type="text" class="form-control" id="artista-agregar " aria-describedby="">
+                                <input placeholder="artista" type="text" class="form-control" id="artista-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Estado de ánimo</label>
                                 <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-agregar">
-                                    <option class=" text-white" selected>seleccione el mood</option>
+                                    <option class="text-white" value="">seleccione el mood</option>
                                     <option value="alegre">Alegre</option>
                                     <option value="triste">Triste</option>
                                     <option value="melancolico">Melancolico</option>
@@ -101,19 +101,22 @@
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Agregar link de portada</label>
-                                <input placeholder="link de audio" type="text" class="form-control" id="portada-agregar" aria-describedby="">
+                                <input placeholder="link de portada" type="text" class="form-control" id="portada-agregar" aria-describedby="">
                                 <div id="" class="form-text"></div>
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label text-white">Seleccione el idioma</label>
                                 <select class="form-select colorfondo text-white" aria-label="Default select example" id="idioma-agregar">
-                                    <option class=" text-white" selected>seleccione el idioma</option>
+                                    <option class="text-white" value="">seleccione el idioma</option>
                                     <option value="espaniol">Español</option>
                                     <option value="ingles">Ingles</option>
                                 </select>
                             </div>
-                            <div class="modal-footer border-0 text-center d-flex justify-content-center">
+                            <div>
                                 <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-agregar"></p>
+                            </div>
+                            <div class="modal-footer border-0 text-center d-flex justify-content-center">
+
                                 <button type="button" class="btn btn-light boton-cerrar ps-3 pe-3" data-bs-dismiss="modal">Volver</button>
                                 <button type="submit" class="btn btn-light boton-iniciar ps-3 pe-3 pt-2 pb-2">Agregar Cancion</button>
                             </div>
