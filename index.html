@@ -7,9 +7,13 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/reproductor.css">
+    <link rel="stylesheet" href="css/modales.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/modales.css">
+    <link rel="stylesheet" href="css/descubrir.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -33,7 +37,7 @@
                             <a class="nav-link active" aria-current="page" href="./html/canciones.html">Canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./html/descubrir.html">Descubrir (beta)</a>
+                            <a class="nav-link active" aria-current="page" href="./html/descubrir.html">Descubrir (Beta)</a>
                         </li>
                         <li id="iniciar-sesion" class="nav-item">
                             <a class="nav-link active btn text-lg-start text-md-start text-xl-start text-xxl-start text-sd-center btn btn-light ms-2 ps-3 pe-3 boton-iniciar" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesion</a>
@@ -67,7 +71,7 @@
                                                 <input id="#password-login" type="password" class="form-control" id="exampleInputPassword1">
                                             </div>
                                             <div class="text-center">
-                                                <p class="text-white" id="error-login"></p>
+                                                <p class="text-white d-none rounded-2 ps-3 ps-3" id="error-login"></p>
                                                 <button id="" type="submit" class="btn btn-light mb-3 ps-3 pe-3 boton-iniciar text-white">Iniciar Sesion</button>
                                                 <p><a class="link-offset-1 text-white" href="#">¿Olvidaste tu contraseña?</a></p>
                                                 <p>¿No tienes cuenta?<a class="link-offset-1 ms-1 texto-rosa" href="./html/registro.html">Registrate en Pinkify</a></p>
@@ -134,10 +138,10 @@
         <div class="container-fluid text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-white">Acerca de nosotros</h5>
+                    <h5 class="text-uppercase mb-4 text-white">Informacion</h5>
                     <hr class="mb-4">
                     <a href="./html/acerca-de-nosotros.html">
-                        <p class="text-white">Conoce mas sobre nosotros!</p>
+                        <p class="text-white">Acerca de nosotros</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -159,7 +163,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
                     <hr class="mb-4">
-                    <p><a class="link-offset-1 text-white" href="./html/admin.html">Iniciar sesion como Admin</a></p>
+                    <p><a class="link-offset-1 text-white" href="./html/admin.html">Sección Admin</a></p>
 
                 </div>
                 <hr class="mb-4">

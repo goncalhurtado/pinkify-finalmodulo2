@@ -37,3 +37,22 @@ body {
 .text-justify {
     text-align: justify;
 }
+
+input {
+    background: var(--dark)!important;
+    border: 1px solid var(--secundario)!important;
+    border-radius: 20px!important;
+    color: #86828F!important;
+}
+
+input::placeholder {
+    color: #86828F!important;
+}
+
+input:focus {
+    background-color: #86828f00!important;
+}
+
+form:focus {
+    color: var(--secundario)!important;
+}

@@ -153,26 +153,27 @@
 
             <div class="mt-5">
                 <h4 class="text-white">¿Queres trabajar con nosotros? Envianos tus datos!</h4>
-                <form action="" class="text-white">
+                <form action="" class="text-white" id="formAcerca">
                     <div class="row">
                         <div class="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Completo">
+                            <input maxlength="40" id="nombre-acerca" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Completo">
                         </div>
                         <div class="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo@mail.com">
+                            <input maxlength="40" id="mail-acerca" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo@mail.com">
                         </div>
                         <div class="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <label for="exampleFormControlInput1" class="form-label">Perfil de Linkedin</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Linkedin">
+                            <input maxlength="100" id="perfil-acerca" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Linkedin">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Una breve descipcion sobre vos</label>
-                            <textarea class="form-control colorfondo" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea id="texto-acerca" class="form-control colorfondo" id="exampleFormControlTextarea1" rows="3" maxlength="180"></textarea>
                         </div>
                     </div>
                     <div>
+                        <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-acerca"></p>
                         <button class="btn btn-light boton-iniciar text-white ps-3 pe-3">Enviar</button>
                     </div>
             </div>
@@ -186,10 +187,10 @@
         <div class="container-fluid text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-white">Acerca de nosotros</h5>
+                    <h5 class="text-uppercase mb-4 text-white">Informacion</h5>
                     <hr class="mb-4">
-                    <a href="">
-                        <p class="text-white">Conoce mas sobre nosotros!</p>
+                    <a href="./acerca-de-nosotros.html">
+                        <p class="text-white">Acerca de nosotros</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -211,7 +212,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
                     <hr class="mb-4">
-                    <p><a class="link-offset-1 text-white" href="./admin.html">Iniciar sesion como Admin</a></p>
+                    <p><a class="link-offset-1 text-white" href="./admin.html">Sección Admin</a></p>
 
                 </div>
                 <hr class="mb-4">
@@ -236,7 +237,7 @@
 
     </footer>
     <script src="../js/base-de-datos.js"></script>
-
+    <script src="../js/acerca-de-nosotros.js"></script>
     <script src="../js/iniciar-sesion.js"></script>
     <script src="../js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js " integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r " crossorigin="anonymous "></script>

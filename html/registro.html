@@ -52,30 +52,30 @@
                 <div class="mb-3 form-registro">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
                         <label class="control-label text-white mb-1">Nombre</label>
-                        <input id="nombre-registro" name="first_name" placeholder="Nombre" class="form-control" type="text">
+                        <input maxlength="40" id="nombre-registro" name="first_name" placeholder="Nombre" class="form-control" type="text">
                     </div>
                 </div>
                 <div class="mb-3 form-registro">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
                         <label class="control-label text-white mb-1">Apellido</label>
-                        <input id="apellido-registro" name="last_name" placeholder="Apellido" class="form-control" type="text">
+                        <input maxlength="40" id="apellido-registro" name="last_name" placeholder="Apellido" class="form-control" type="text">
                     </div>
                 </div>
                 <div class="mb-3 form-registro">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
                         <label class="control-label text-white mb-1">Mail</label>
-                        <input id="email-registro" name="email" placeholder="Ejemplo@mail.com" class="form-control" type="text">
+                        <input maxlength="40" id="email-registro" name="email" placeholder="Ejemplo@mail.com" class="form-control" type="text">
                     </div>
                 </div>
-                <div class="mb-3 form-registro">
+                <div class=" form-registro">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto text-center">
                         <label class="control-label text-white mb-1">Contraseña</label>
-                        <input id="password-registro" name="password" placeholder="Contraseña" class="form-control" type="password">
+                        <input maxlength="40" id="password-registro" name="password" placeholder="Contraseña" class="form-control" type="password">
                     </div>
                 </div>
-                <p class="error text-white col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-1 m-auto" id="error"></p>
-                <div class="text-center">
-                    <button class="btn btn-light boton-iniciar ps-3 pe-3 text-white mt-3" type="submit">Registrarse</button>
+                <div class="text-center mt-3">
+                    <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-registro"></p>
+                    <button class="btn btn-light mb-3 ps-3 pe-3 boton-iniciar text-white mt-2" type="submit">Registrarse</button>
                 </div>
             </form>
         </div>
@@ -87,10 +87,10 @@
         <div class="container-fluid text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 text-white">Acerca de nosotros</h5>
+                    <h5 class="text-uppercase mb-4 text-white">Informacion</h5>
                     <hr class="mb-4">
-                    <a href="">
-                        <p class="text-white">Conoce mas sobre nosotros!</p>
+                    <a href="./acerca-de-nosotros.html">
+                        <p class="text-white">Acerca de nosotros</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -112,7 +112,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
                     <hr class="mb-4">
-                    <p><a class="link-offset-1 text-white" href="./admin.html">Iniciar sesion como Admin</a></p>
+                    <p><a class="link-offset-1 text-white" href="./admin.html">Sección Admin</a></p>
 
                 </div>
                 <hr class="mb-4">

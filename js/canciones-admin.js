@@ -187,8 +187,16 @@ formAgregarCancion.addEventListener("submit", (e) => {
     let artista = document.getElementById(`artista-agregar`).value
     let mood = document.getElementById(`mood-agregar`).value
     let link = document.getElementById(`link-agregar`).value
+    let portada = document.getElementById(`portada-agregar`).value
+    let idioma = document.getElementById(`idioma-agregar`).value
+    let error = document.getElementById(`error`);
 
-    let nuevaCancion = new Cancion(id, nombre, artista, mood, link, false)
+    if (nombre === "" || artista === "" || link === "" || portada === "") {
+
+    }
+
+
+    let nuevaCancion = new Cancion(id, nombre, artista, mood, link, portada, idioma, false)
     canciones.push(nuevaCancion)
     localStorage.setItem("canciones", JSON.stringify(canciones))
     formAgregarCancion.reset()

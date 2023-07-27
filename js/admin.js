@@ -35,43 +35,64 @@ const usuariosRecuperados = JSON.parse(usuariosString);
 
 const formLogin = document.querySelector("#login")
 
-
 formLogin.addEventListener("submit", (e) => {
     e.preventDefault()
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-login").value;
     const errorLogin = document.getElementById(".error")
     error.innerHTML = "";
-    //validar si existe el usuario con ese mail
+
     if (email === "" || password === "") {
-        error.innerHTML = "todos los campos son obligatorios"
-        error.style.display = "block"
+        error.innerHTML = "Todos los campos son obligatorios"
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
         setTimeout(() => {
-            error.style.display = "none"
-        }, 2000)
+            error.classList.add("d-none")
+        }, 4000)
         return;
     }
+
+    let regexAdmin = /^[a-zA-Z0-9._-]+@pinkify\.com$/
+    let validarAdmin = regexAdmin.test(email);
+
+    if (!validarAdmin) {
+        error.innerHTML = "Solo son validos los mails de dominio @pinkify.com"
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        formLogin.reset();
+        setTimeout(() => {
+            error.classList.add("d-none")
+        }, 4000)
+        return;
+    }
+
     let validarEmail = usuariosRecuperados.find((usuario) => {
         return usuario.email === email && usuario.password === password
     });
 
     if (validarEmail === undefined) {
-        alert("usuario o contraseña son incorrectos")
-        formLogin.reset() //me limpia el formulario
-        document.getElementById("email-login").focus()
+        error.innerHTML = "Usuario o Contraseña son incorrectos"
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        setTimeout(() => {
+            error.classList.add("d-none")
+        }, 4000)
         return;
     }
     validarEmail.isLogged = true;
     localStorage.setItem("usuarioLogueadoAdmin", JSON.stringify(validarEmail))
     formLogin.reset();
-    alert("usuario logueado con exito")
-    window.location.reload();
-    // si existe el usuario y lo encuentra
+    error.innerHTML = "Usuario logueado con exito!"
+    error.classList.remove("text-bg-danger")
+    error.classList.add("text-bg-success")
+    error.classList.remove("d-none")
+    setTimeout(() => {
+        error.classList.add("d-none")
+        window.location.reload();
+    }, 2000)
+
 })
 
-//FUNCIONDALIDADES
-
-//volver al index
 
 let volverAIndex = document.getElementById("volver-a-index")
 volverAIndex.addEventListener("click", (e) => {

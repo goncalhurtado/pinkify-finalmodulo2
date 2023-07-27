@@ -11,14 +11,16 @@ formLogin.addEventListener("submit", (e) => {
     e.preventDefault()
     let email = document.getElementById("#email-login").value;
     let password = document.getElementById("#password-login").value;
-    const errorLogin = document.querySelector("error-login")
-        //validar si existe el usuario con ese mail
+    let errorLogin = document.getElementById("error-login")
+
     if (email === "" || password === "") {
         errorLogin.innerHTML = "todos los campos son obligatorios"
-        errorLogin.style.display = "block"
+        errorLogin.classList.remove("d-none")
+        errorLogin.classList.add("text-bg-danger")
         setTimeout(() => {
-            error.style.display = "none"
-        }, 4000)
+            errorLogin.classList.add("d-none")
+            errorLogin.classList.remove("text-bg-danger")
+        }, 3000)
         return;
     }
     let validarEmail = usuariosRecuperados.find((usuario) => {
@@ -26,17 +28,29 @@ formLogin.addEventListener("submit", (e) => {
     });
 
     if (validarEmail === undefined) {
-        alert("usuario o contraseña son incorrectos")
-        formLogin.reset() //me limpia el formulario
+        // let errorLogin = document.getElementById("error-login")
+        errorLogin.innerHTML = "Mail o contraseña incorrectos!"
+        errorLogin.classList.remove("d-none")
+        errorLogin.classList.add("text-bg-danger")
+        formLogin.reset()
+        setTimeout(() => {
+            errorLogin.classList.add("d-none")
+            errorLogin.classList.remove("text-bg-danger")
+        }, 3000)
         document.getElementById("#email-login").focus()
         return;
     }
     validarEmail.isLogged = true;
     localStorage.setItem("usuarioLogueado", JSON.stringify(validarEmail))
     formLogin.reset();
-    alert("usuario logueado con exito")
-    window.location.reload();
-    // si existe el usuario y lo encuentra
+    errorLogin.classList.remove("d-none")
+    errorLogin.classList.remove("text-bg-danger", "rounded-2", "ps-3", "pe-3")
+    errorLogin.classList.add("text-bg-success", "rounded-2", "ps-3", "pe-3")
+    errorLogin.innerHTML = "Has iniciado sesión con éxito."
+    setTimeout(() => {
+        window.location.reload();
+    }, 2000)
+
 })
 
 
@@ -69,7 +83,5 @@ logOut.addEventListener("click", (e) => {
     iniciarSesion.classList.remove("d-none")
     usuarioNavbar.classList.remove("d-none")
     usuarioNavbar.classList.add("d-none")
-
-    // Para recargar la página
     window.location.reload();
 })

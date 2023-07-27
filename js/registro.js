@@ -31,41 +31,66 @@ formSignUp.addEventListener("submit", (e) => {
     let apellido = document.querySelector("#apellido-registro").value;
     let email = document.querySelector("#email-registro").value;
     let password = document.querySelector("#password-registro").value;
-    let error = document.querySelector(".error")
+    let error = document.getElementById("error-registro")
     error.innerHTML = "";
+
+
+
+    if (nombre === "" || email === "" || apellido === "" || password === "") {
+        error.innerHTML = `todos los campos son obligatorios`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 2000)
+        return;
+    }
 
     //validacion del mail
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$/;
     let emailValidado = regex.test(email); //esto devuelve true o false
 
-    if (nombre === "" || email === "" || apellido === "" || password === "") {
-        error.innerHTML = `todos los campos son obligatorios`;
-        error.style.display = "block"
-        setTimeout(() => {
-            error.style.display = "none"
-        }, 2000)
-        return;
-    }
-    //Validar mail con expresión regular
-
     if (!emailValidado) {
-        error.innerHTML = `todos los campos son obligatorios`;
-        error.style.display = "block"
+        error.innerHTML = `El Mail no es correcto`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
         setTimeout(() => {
-            error.style.display = "none"
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
         }, 4000)
         return;
     }
 
-    //Validar si el usuario ya existe
+    let regexContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[^\s]{8,}$/
+    let passwordvalidado = regexContraseña.test(password);
+
+    if (!passwordvalidado) {
+        error.innerHTML = `La contraseña debe tener al menos una letra mayúscula y minúscula, un número. un caracter especial y debe tener mas de 8 caracteres`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
+        document.querySelector("#password-registro").focus();
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 5000)
+        return;
+    }
 
     let validarUsuario = usuarios.find((usuario) => {
         return usuario.email === email
     });
     if (validarUsuario != undefined) {
-        alert(`usuario ya existe`)
+
+        error.innerHTML = `El Mail ya se encuentra registrado`;
+        error.classList.add("text-bg-danger")
+        error.classList.remove("d-none")
         formSignUp.reset()
-        document.querySelector("#nombre-registro").focus();
+        document.querySelector("#email-registro").focus();
+        setTimeout(() => {
+            error.classList.add("d-none")
+            error.classList.remove("text-bg-danger")
+        }, 4000)
         return;
     }
 
