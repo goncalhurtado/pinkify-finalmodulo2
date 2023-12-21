@@ -4,7 +4,7 @@ This project, "Pinkify," was developed as part of the Rolling Code course to sho
 
 ## Features
 
-- **Audio Playback:** Pinkify allows audio playback within the application.
+- **Audio:** Pinkify allows play audio.
 - **Admin Functionality:** Includes an admin section to add, edit, and delete songs.
 - **User Registration:** Users can register within the app. Please note that user information is stored in your browser's local storage. Be aware that any data stored here is saved locally.
 
