@@ -1,0 +1,18 @@
+:root {
+    --dark: #0E061F;
+    --primario: #261C35;
+    --secundario: #DC2DEA;
+    --terciario: #FFE1FE;
+}
+
+.texto-ops {
+    font-size: 40px!important;
+    font-weight: 800;
+}
+
+.texto-404 {
+    color: #2D5BFE;
+    font-size: 80px;
+    font-weight: 800;
+    margin-top: -30px;
+}

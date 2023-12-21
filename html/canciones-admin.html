@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/modales.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/canciones.css">
+    <link rel="stylesheet" href="../css/descubrir.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <img src="../assets/img/pinkyNavbar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <a class="navbar-brand ms-3" href="">Pinkify ADMIN</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./admin.html">ADMIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="editar-canciones" class="nav-link active" aria-current="page" href="./canciones-admin.html">Editor</a>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a id="volver-a-index" class="nav-link active" aria-current="page" href="../index.html">Volver al inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container text-center">
+            <h3 class="text-white">EDITOR DE CANCIONES</h3>
+            <button class="btn btn-outline-primary mt-2 mb-4 ps-3 pe-3 boton-iniciar text-white" data-bs-toggle="modal" data-bs-target="#agregar-cancion">Agregar Canción</button>
+            <a href="../html/canciones.html" class="btn btn-primary mt-2 mb-4 ps-3 pe-3 boton-cerrar">Ir a canciones</a>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-start">
+                        <th scope="col">Cancion</th>
+                        <th scope="col">Artista</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col" class="text-center">Editar</th>
+                </thead>
+                <tbody id="tabla-canciones" class="text-start">
+                    <!-- aca van las canciones -->
+
+            </table>
+
+        </div>
+
+        <!-- MODAL AGREGAR CANCION -->
+        <div class="modal fade" id="agregar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title fs-5 text-white text-center " id="exampleModalLabel">Agregar Cancion</h3>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body colorfondo">
+                        <form id="formAgregarCancion" class="colorfondo text-center">
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Nombre de la cancion</label>
+                                <input placeholder="nombre de la cancion" type="text" class="form-control text-white" id="nombre-agregar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label colorfondo text-white">Artista</label>
+                                <input placeholder="artista" type="text" class="form-control text-white" id="artista-agregar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Estado de ánimo</label>
+                                <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-agregar">
+                                    <option class="text-white" value="">seleccione el mood</option>
+                                    <option value="Alegre">Alegre</option>
+                                    <option value="Triste">Triste</option>
+                                    <option value="Melancólico">Melancólico</option>
+                                    <option value="Fiestero">Fiestero</option>
+                                    <option value="Romántico">Romántico</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Agregar link de audio</label>
+                                <input placeholder="link de audio" type="text" class="form-control text-white" id="link-agregar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Agregar link de portada</label>
+                                <input placeholder="link de portada" type="text" class="form-control text-white" id="portada-agregar" aria-describedby="">
+                                <div id="" class="form-text"></div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label for="exampleInputEmail1" class="form-label text-white">Seleccione el idioma</label>
+                                <select class="form-select colorfondo text-white" aria-label="Default select example" id="idioma-agregar">
+                                    <option class="text-white" value="">seleccione el idioma</option>
+                                    <option value="espaniol">Español</option>
+                                    <option value="ingles">Ingles</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-agregar"></p>
+                            </div>
+                            <div class="modal-footer border-0 text-center d-flex justify-content-center">
+
+                                <button type="button" class="btn btn-light boton-cerrar ps-3 pe-3" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="text-white btn btn-light boton-iniciar ps-3 pe-3 pt-2 pb-2">Agregar Cancion</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODAL EDITAR CANCION -->
+        <div>
+            <div class="modal fade" id="editar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar Canción</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body colorfondo">
+                            <form id="formEditarCancion" class="text-white text-center">
+                                <div class="mb-3 d-none">
+                                    <label class="form-label">Id</label>
+                                    <input type="text" class="form-control" id="id-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Nombre de la cancion</label>
+                                    <input type="text" class="form-control text-white" id="nombre-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Artista</label>
+                                    <input type="text" class="form-control text-white" id="artista-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Estado de ánimo</label>
+                                    <select class="form-select colorfondo text-white" aria-label="Default select example" id="mood-editar">
+                                    <option selected class="text-white" value="">Seleccione el mood</option>
+                                    <option value="Alegre">Alegre</option>
+                                    <option value="Triste">Triste</option>
+                                    <option value="Melancólico">Melancólico</option>
+                                    <option value="Fiestero">Fiestero</option>
+                                    <option value="Romántico">Romántico</option>
+                                </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Agregar link de audio</label>
+                                    <input type="text" class="form-control text-white" id="link-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-center">Agregar link de portada</label>
+                                    <input type="text" class="form-control text-white" id="portada-editar" aria-describedby="">
+                                    <div id="" class="form-text"></div>
+                                </div>
+                                <div class="mb-3 text-center">
+                                    <label for="exampleInputEmail1" class="form-label text-white">Seleccione el idioma</label>
+                                    <select class="form-select colorfondo text-white" aria-label="Default select example" id="idioma-editar">
+                                        <option class="text-white" value="">seleccione el idioma</option>
+                                        <option value="espaniol">Español</option>
+                                        <option value="ingles">Ingles</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <p class="m-auto text-white d-none rounded-2 ps-3 ps-3 w-auto" id="error-editar"></p>
+                                </div>
+                                <div class="modal-footer border-0 text-center d-flex justify-content-center">
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-light boton-cerrar ps-3 pe-3" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="text-white btn btn-light boton-iniciar ps-3 pe-3 pt-2 pb-2">Guardar Edicion</button>
+                                    </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODAL ELIMINAR CANCION -->
+            <div class="modal fade" id="eliminar-cancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-white" id="texto-modal-eliminar"></h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white colorfondo">
+                            <div id="confirmacion-eliminar" class="text-center text-white">
+                                <div id="animacion-eliminar" class="d-none spinner-border text-danger" role="status">
+                                </div>
+                                <p class="d-none text-danger" id="texto-eliminar">Eliminando...</p>
+                                <button id="boton-conf" type="submit" class="btn btn-outline-danger">Eliminar Cancion</button>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center colorfondo">
+                            <button type="button" class="btn boton-cerrar" data-bs-dismiss="modal">Volver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    </main>
+    <footer class="text-white pt-5 pb-4">
+
+        <div class="container-fluid text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">Informacion</h5>
+                    <hr class="mb-4">
+                    <a href="./acerca-de-nosotros.html">
+                        <p class="text-white">Acerca de nosotros</p>
+                    </a>
+                    <div><img class="w-25" src="../assets/img/pinky-footer.png" alt=""></div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">Comunidades</h5>
+                    <hr class="mb-4">
+                    <p>
+                        <a class="text-white" href="./error.html">Desarrolladores</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="./error.html">Publicidad</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="./error.html">Inversores</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="./error.html">Proveedores</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-white">ADMIN</h5>
+                    <hr class="mb-4">
+                    <p><a class="link-offset-1 text-white" href="./admin.html">Sección Admin</a></p>
+
+                </div>
+                <hr class="mb-4">
+                <div class="text-center mb-2">
+                    <p>© 2023 Pinkify. Todos los derechos reservados.</p>
+                </div>
+                <div class="text-center">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="./error.html" class="fab fa-instagram text-white" style="text-decoration: none;"></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="./error.html" class="fab fa-youtube text-white" style="text-decoration: none;"></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="./error.html" class="fab fa-linkedin text-white" style="text-decoration: none;"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="../js/base-de-datos.js"></script>
+    <script src="../js/canciones-admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+
+</html>

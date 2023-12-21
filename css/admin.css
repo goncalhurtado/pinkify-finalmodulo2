@@ -1,0 +1,33 @@
+:root {
+    --dark: #0E061F;
+    --primario: #261C35;
+    --secundario: #DC2DEA;
+    --terciario: #FFE1FE;
+}
+
+.boton-cerrar {
+    background-color: #0E061F!important;
+    color: #DC2DEA;
+    border-radius: 15px;
+    border: #DC2DEA solid 2px;
+    font-size: 16px;
+    /* padding: 5px; */
+    /* margin-top: 3px; */
+}
+
+.boton-cerrar:hover {
+    background-color: #DC2DEA!important;
+    color: #261C35;
+    border: #261C35 solid 2px;
+}
+
+.tabla-oculta {
+    background-color: #0e061fa2!important;
+    border: none;
+    color: #FFE1FE!important;
+}
+
+select {
+    border: solid #DC2DEA 1px!important;
+    border-radius: 10px 10px 10px;
+}

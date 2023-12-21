@@ -1,10 +1,63 @@
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'M PLUS Rounded 1c';
+    src: url('../assets/font/MPLUSRounded1c-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c';
+    background: #0E061F;
+}
+
+.colorfondo {
+    background: #0E061F!important;
+}
+
+.colorblanco {
+    background: #FFFFFF!important;
+}
+
 .imagen-playlist {
     width: 140px;
     height: 160px;
 }
 
+.text-justify {
+    text-align: justify;
+}
 
-/* .play-playlist {
-    margin-top: 70px;
-    margin-left: 55px;
-} */
+input {
+    background: var(--dark)!important;
+    border: 1px solid var(--secundario)!important;
+    border-radius: 20px!important;
+    color: #86828F!important;
+}
+
+input::placeholder {
+    color: #86828F!important;
+}
+
+input:focus {
+    background-color: #86828f00!important;
+}
+
+form:focus {
+    color: var(--secundario)!important;
+}
+
+.cuadro-index:hover {
+    transform: scale(1.04);
+    transition: transform 0.5s ease;
+}

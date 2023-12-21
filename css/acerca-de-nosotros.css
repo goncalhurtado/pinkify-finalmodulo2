@@ -1,0 +1,25 @@
+:root {
+    --dark: #0E061F;
+    --primario: #261C35;
+    --secundario: #DC2DEA;
+    --terciario: #FFE1FE;
+}
+
+.cuadro-acerca {
+    background-color: #261C35;
+}
+
+textarea {
+    resize: none;
+    border: solid 1px var(--secundario)!important;
+    color: #86828F!important;
+}
+
+textarea::placeholder {
+    color: #261C35;
+}
+
+.cuadro-acerca:hover {
+    transform: scale(1.04);
+    transition: transform 0.5s ease;
+}
